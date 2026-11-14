@@ -1,0 +1,18 @@
+env: load .env
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_WEB_BASE_URL
+Starting project at C:\Users\sayye\source\repos\rotihai-user
+Starting Metro Bundler
+
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+Waiting on http://localhost:8092
+
+Logs for your project will appear below.
+| (node:79700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:79700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 203556ms index.ts (1401 modules)
+Android Bundled 1653ms index.ts (1 module)
+ ERROR  Text strings must be rendered within a <Text> component.
+ ERROR  Text strings must be rendered within a <Text> component.
+ ERROR  Text strings must be rendered within a <Text> component.

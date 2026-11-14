@@ -1,0 +1,624 @@
+[
+  {
+    "source": "src/application/user/cart/couponRules.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/coupons/verify",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "source": "src/application/user/cart/restoreCart.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/categories",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/products/",
+        "line": 11
+      },
+      {
+        "endpoint": "/api/products/",
+        "line": 12
+      },
+      {
+        "endpoint": "/api/chefs/",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "source": "src/application/user/payments/paymentRules.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "source": "src/core/api/customerApi.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/user/profile",
+        "line": 33
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "source": "src/core/api/offlineCache.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/categories",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/products",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/chefs/",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/promotional-banners",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/custom-subscription/price-per-roti",
+        "line": 5
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/user/orders",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/orders",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/subscriptions",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 24
+      }
+    ]
+  },
+  {
+    "source": "src/core/location/customerLocation.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/geocode-full-address",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "source": "src/core/location/DeliveryAreaProvider.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/validate-pincode",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "source": "src/core/notifications/mobilePush.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/user/mobile-push",
+        "line": 14
+      },
+      {
+        "endpoint": "/api/user/mobile-push",
+        "line": 19
+      }
+    ]
+  },
+  {
+    "source": "src/core/providers/CustomerProvider.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/user/change-password",
+        "line": 20
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 22
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 22
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 83
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 92
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/hooks/useDiscovery.ts",
+    "endpoints": [
+      {
+        "endpoint": "/api/chefs/by-location?latitude=${area.latitude}&longitude=${area.longitude}&pincode=${area.pincode}",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/chefs/by-location",
+        "line": 7
+      },
+      {
+        "endpoint": "/api/products",
+        "line": 8
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/navigation/NotificationNavigation.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/user/orders",
+        "line": 28
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/navigation/UserAppNavigator.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/user/profile",
+        "line": 82
+      },
+      {
+        "endpoint": "/api/user/otp/send",
+        "line": 111
+      },
+      {
+        "endpoint": "/api/user/otp/verify",
+        "line": 137
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 152
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 173
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/AccountScreens.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/payment-settings",
+        "line": 15
+      },
+      {
+        "endpoint": "/api/newsletter/subscribe",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 32
+      },
+      {
+        "endpoint": "/api/user/change-password",
+        "line": 35
+      },
+      {
+        "endpoint": "/api/user/wallet",
+        "line": 38
+      },
+      {
+        "endpoint": "/api/user/wallet/transactions?limit=50",
+        "line": 38
+      },
+      {
+        "endpoint": "/api/user/referrals",
+        "line": 41
+      },
+      {
+        "endpoint": "/api/user/referral-eligibility",
+        "line": 41
+      },
+      {
+        "endpoint": "/api/referral-settings",
+        "line": 41
+      },
+      {
+        "endpoint": "/api/user/referral-stats",
+        "line": 41
+      },
+      {
+        "endpoint": "/api/user/generate-referral",
+        "line": 50
+      },
+      {
+        "endpoint": "/api/user/apply-referral",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/AddressScreen.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/chefs/by-location?latitude=",
+        "line": 24
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/CartScreen.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/chefs/by-location?latitude=",
+        "line": 29
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/CatalogScreens.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/products/",
+        "line": 58
+      },
+      {
+        "endpoint": "/api/chefs/",
+        "line": 59
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 60
+      },
+      {
+        "endpoint": "/api/products/",
+        "line": 60
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/CheckoutScreen.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/payment-settings",
+        "line": 25
+      },
+      {
+        "endpoint": "/api/user/wallet",
+        "line": 26
+      },
+      {
+        "endpoint": "/api/wallet-settings",
+        "line": 27
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 28
+      },
+      {
+        "endpoint": "/api/cart-settings",
+        "line": 29
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 30
+      },
+      {
+        "endpoint": "/api/admin-settings",
+        "line": 31
+      },
+      {
+        "endpoint": "/api/roti-settings",
+        "line": 49
+      },
+      {
+        "endpoint": "/api/calculate-delivery",
+        "line": 53
+      },
+      {
+        "endpoint": "/api/user/check-bonus-eligibility",
+        "line": 55
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 80
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 80
+      },
+      {
+        "endpoint": "/api/roti-settings",
+        "line": 82
+      },
+      {
+        "endpoint": "/api/chefs/",
+        "line": 83
+      },
+      {
+        "endpoint": "/api/products/",
+        "line": 88
+      },
+      {
+        "endpoint": "/api/products/",
+        "line": 89
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 94
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 94
+      },
+      {
+        "endpoint": "/api/orders/validate-preorder",
+        "line": 119
+      },
+      {
+        "endpoint": "/api/orders",
+        "line": 146
+      },
+      {
+        "endpoint": "/api/user/orders",
+        "line": 159
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/DiscoveryScreen.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/promotional-banners",
+        "line": 21
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/OrderScreens.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/orders",
+        "line": 19
+      },
+      {
+        "endpoint": "/api/payment-settings",
+        "line": 29
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 29
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 35
+      },
+      {
+        "endpoint": "/api/chefs/by-location?latitude=",
+        "line": 39
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/PaymentScreen.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/payment-settings",
+        "line": 20
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 21
+      },
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 22
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 36
+      },
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 36
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 38
+      },
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 38
+      },
+      {
+        "endpoint": "/api/payment-settings",
+        "line": 63
+      },
+      {
+        "endpoint": "/api/orders/",
+        "line": 71
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/RecoveryScreen.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/pending-checkouts/latest",
+        "line": 14
+      },
+      {
+        "endpoint": "/api/user/orders",
+        "line": 15
+      },
+      {
+        "endpoint": "/api/pending-checkouts/latest",
+        "line": 27
+      },
+      {
+        "endpoint": "/api/user/orders",
+        "line": 29
+      }
+    ]
+  },
+  {
+    "source": "src/presentation/user/screens/SubscriptionScreens.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/products",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/subscriptions",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/subscriptions",
+        "line": 29
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 44
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 44
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 44
+      },
+      {
+        "endpoint": "/api/products",
+        "line": 44
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 54
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 54
+      },
+      {
+        "endpoint": "/api/subscriptions",
+        "line": 56
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 57
+      },
+      {
+        "endpoint": "/api/subscriptions",
+        "line": 59
+      },
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 72
+      },
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 75
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 79
+      },
+      {
+        "endpoint": "/api/subscriptions/",
+        "line": 81
+      },
+      {
+        "endpoint": "/api/custom-subscription/price-per-roti",
+        "line": 102
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 102
+      },
+      {
+        "endpoint": "/api/custom-subscription/requests",
+        "line": 102
+      },
+      {
+        "endpoint": "/api/custom-subscription/requests",
+        "line": 109
+      },
+      {
+        "endpoint": "/api/custom-subscription/requests",
+        "line": 109
+      },
+      {
+        "endpoint": "/api/custom-subscription/price-per-roti",
+        "line": 110
+      },
+      {
+        "endpoint": "/api/custom-subscription/price-per-roti",
+        "line": 110
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 111
+      },
+      {
+        "endpoint": "/api/custom-subscription/request",
+        "line": 113
+      },
+      {
+        "endpoint": "/api/custom-subscription/requests",
+        "line": 116
+      },
+      {
+        "endpoint": "/api/custom-subscription/requests",
+        "line": 116
+      }
+    ]
+  }
+]

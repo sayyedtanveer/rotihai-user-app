@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-14T13:10:06.456Z",
+  "typecheck": "passed",
+  "tests": {
+    "passed": 39,
+    "failed": 0,
+    "log": "final-tests.log"
+  },
+  "exports": {
+    "android": {
+      "result": "passed",
+      "reviewFixtureMarkers": "absent",
+      "bundles": [
+        "index-6a63e6e7bf903a6e73fec9baa03d1f33.hbc"
+      ]
+    },
+    "ios": {
+      "result": "passed",
+      "reviewFixtureMarkers": "absent",
+      "bundles": [
+        "index-d965f7fd7fce40d342186959f3719e05.hbc"
+      ]
+    }
+  },
+  "nativePaymentConfig": "passed",
+  "screenshots": {
+    "captures": 52,
+    "expectedScreensAndStates": 43,
+    "missing": []
+  },
+  "guestInteraction": {
+    "basketToAddress": "observed and captured",
+    "addressSaveToCheckout": "not fully certified by emulator automation",
+    "reason": "Repeated Android UiTestAutomationBridge null-root/accessibility failures",
+    "log": "guest-checkout-interactions.txt"
+  },
+  "liveOtpOrdersPayments": "not executed",
+  "nativeReleaseBuilds": "not run"
+}

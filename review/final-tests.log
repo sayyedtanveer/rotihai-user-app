@@ -1,0 +1,51 @@
+
+> rotihai-user@0.1.0 test
+> node --test tests/*.test.cjs
+
+✔ baskets stay separated by kitchen and category (1.942ms)
+✔ mixed instant/preorder basket rejected (0.6842ms)
+✔ fractional or excessive quantities rejected (0.3933ms)
+✔ promotion caps discounted quantity (0.3356ms)
+✔ expired promotion is not billed (0.9654ms)
+✔ fee above 200 is preserved until configured waiver (0.3193ms)
+✔ fresh offer expiry or changed discount blocks checkout (0.4765ms)
+✔ fresh promotion quantity limit blocks checkout (0.2902ms)
+✔ removed variant blocks checkout (0.3204ms)
+✔ stock and menu movement block checkout (0.4511ms)
+✔ unchanged current item passes (0.3272ms)
+✔ slot cutoff uses Indian timezone irrespective of device timezone (0.6944ms)
+✔ past slots cannot be selected (0.1955ms)
+✔ impossible and past pause dates rejected (3.7353ms)
+✔ onboarding structured address survives saved profile parsing (0.7137ms)
+✔ saved basket restoration fetches current prices without placing an order (0.9728ms)
+✔ unavailable saved dishes fail restoration (0.5739ms)
+✔ malformed saved quantity fails restoration (0.363ms)
+✔ API handles empty success and non-JSON service errors (2.5542ms)
+✔ delivery area rejects malformed pincodes and invalid coordinates (0.3303ms)
+✔ location discovery retains inactive kitchens but respects explicit service restrictions (2.1526ms)
+✔ inactive kitchen remains visible in its category even without menu products (0.2291ms)
+✔ web menu sections retain food type and combo labels, order and Others fallback (0.5102ms)
+✔ menu grouping preserves separate category sections with identical names (15.3157ms)
+✔ cart availability blocks inactive kitchen and removed or unavailable variant (0.4201ms)
+✔ first contact enters Home without turning a phone number into a session (2.3277ms)
+✔ configured web UPI URI preserves manual amount protocol and validates payee (0.6837ms)
+✔ payment is saved before handoff and a successful launcher response cannot declare paid (1.5874ms)
+✔ failed handoff retains the same order with a recoverable failure phase (0.8546ms)
+✔ failed persistence never notifies or launches a payment app (0.3182ms)
+✔ pending payment survives storage reload and stays isolated per account (0.7507ms)
+✔ a locally reported transfer remains awaiting confirmation and cannot clear a changed basket (0.3914ms)
+✔ private offline data is bound to the authenticated token and never to provisional contact (0.6878ms)
+✔ offline catalog reads use snapshots while order mutations and fresh financial reads never fetch (1.4571ms)
+✔ authentication rejection never falls back to cached private account data (1.1584ms)
+✔ basket opens address first and then checkout without a login destination (0.3675ms)
+✔ guest address and checkout draft transfer to the verified owner without granting private account access (0.7513ms)
+✔ review transport cannot serve fixture accounts outside explicit development mode (171.1795ms)
+✔ review mode rejects customer, order, subscription and payment mutations without a network fallback (19.1656ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1096.8643

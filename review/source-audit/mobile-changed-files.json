@@ -1,0 +1,178 @@
+[
+  {
+    "path": "src/application/user/auth/entryRules.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/application/user/cart/cartRules.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/application/user/cart/checkoutRules.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/application/user/cart/restoreCart.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/application/user/catalog/menuRules.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/application/user/payments/paymentRules.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/api/connectivity.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/api/customerApi.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/api/models.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/api/offlineCache.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/providers/CustomerProvider.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/providers/QueryProvider.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/storage/checkoutState.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/core/storage/pendingPayment.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/components/BrandUI.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/components/OrderProgress.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/components/UI.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/navigation/CustomerNavigator.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/navigation/UserAppNavigator.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/AccountScreens.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/CartScreen.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/CatalogScreens.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/CheckoutScreen.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/DiscoveryScreen.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/OnboardingScreens.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/OrderScreens.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/PaymentScreen.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/RecoveryScreen.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/StartupSplash.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/screens/SubscriptionScreens.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/presentation/user/theme/theme.ts",
+    "state": "changed"
+  },
+  {
+    "path": "src/review/ReviewApp.tsx",
+    "state": "changed"
+  },
+  {
+    "path": "src/review/transport.ts",
+    "state": "changed"
+  },
+  {
+    "path": "tests/customer-flows.test.cjs",
+    "state": "changed"
+  },
+  {
+    "path": "tests/journey-payment.test.cjs",
+    "state": "changed"
+  },
+  {
+    "path": "package.json",
+    "state": "changed"
+  },
+  {
+    "path": "package-lock.json",
+    "state": "changed"
+  },
+  {
+    "path": "src/application/user/cart/couponRules.ts",
+    "state": "new"
+  },
+  {
+    "path": "src/application/user/catalog/contentRules.ts",
+    "state": "new"
+  },
+  {
+    "path": "src/application/user/orders/orderRules.ts",
+    "state": "new"
+  },
+  {
+    "path": "src/application/user/subscriptions/subscriptionRules.ts",
+    "state": "new"
+  },
+  {
+    "path": "src/presentation/user/hooks/useReducedMotion.ts",
+    "state": "new"
+  },
+  {
+    "path": "docs/CUSTOMER_APP_IMPLEMENTATION.md",
+    "state": "new"
+  },
+  {
+    "path": "docs/WEB_MOBILE_PARITY.md",
+    "state": "new"
+  }
+]

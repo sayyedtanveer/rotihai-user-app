@@ -1,0 +1,188 @@
+INFO         | Android emulator version 35.4.9.0 (build_id 13025442) (CL:N/A)
+INFO         | Graphics backend: gfxstream
+INFO         | Found systemPath C:\Users\sayye\AppData\Local\Android\Sdk\system-images\android-36\google_apis_playstore\x86_64\
+WARNING      | Please update the emulator to one that supports the feature(s): VulkanVirtualQueue
+INFO         | IPv4 server found: 114.79.129.2
+INFO         | Ignore IPv6 address: 20cf:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 20cf:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 20cf:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 38d5:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 38d5:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 38d5:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 58e3:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 58e3:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 58e3:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 78e9:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 78e9:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Ignore IPv6 address: 78e9:5d0a:2702:0:20cf:5d0a:2702:0
+INFO         | Checking system compatibility:
+INFO         |   Checking: hasCompatibleHypervisor
+INFO         |      Ok: Hypervisor compatibility to run avd: `RotiHaiCheckout` are met
+INFO         |   Checking: hasSufficientSystem
+INFO         |      Ok: System requirements to run avd: `RotiHaiCheckout` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU requirements to run avd: `RotiHaiCheckout` are passed
+INFO         |   Checking: hasSufficientDiskSpace
+INFO         |      Ok: Disk space requirements to run avd: `RotiHaiCheckout` are met
+INFO         | Storing crashdata in: C:\Users\sayye\AppData\Local\Temp\\AndroidEmulator\emu-crash-35.4.9.db, detection is enabled for process: 93488
+INFO         | Guest Driver: Auto (ext controls)
+library_mode swiftshader_indirect gpu mode swiftshader_indirect
+INFO         | Initializing hardware OpenGLES emulation support
+INFO         | HealthMonitor disabled.
+INFO         | initIcdPaths: ICD set to 'swiftshader', using Swiftshader ICD
+INFO         | Setting ICD filenames for the loader = C:\Users\sayye\AppData\Local\Android\Sdk\emulator\qemu\windows-x86_64\lib64\vulkan\vk_swiftshader_icd.json;C:\Users\sayye\AppData\Local\Android\Sdk\emulator\lib64\vulkan\vk_swiftshader_icd.json
+INFO         | SharedLibrary::open for [vulkan-1.dll]
+
+INFO         | SharedLibrary::open for [vulkan-1.dll]: not found in map, open for the first time
+
+INFO         | SharedLibrary::open for [vulkan-1.dll] (win32): call LoadLibraryA
+
+INFO         | SharedLibrary::open succeeded for [vulkan-1.dll]. File name: [C:\WINDOWS\SYSTEM32\vulkan-1.dll]
+
+INFO         | Added library: vulkan-1.dll
+INFO         | Selecting Vulkan device: SwiftShader Device (LLVM 10.0.0), Version: 1.2.0
+INFO         | Supports id properties, got a vulkan device UUID
+INFO         | SharedLibrary::open for [libGLESv2.dll]: not found in map, open for the first time
+
+INFO         | SharedLibrary::open for [libGLESv2.dll] (win32): call LoadLibraryA
+
+INFO         | SharedLibrary::open succeeded for [libGLESv2.dll]. File name: [C:\Users\sayye\AppData\Local\Android\Sdk\emulator\lib64\gles_swiftshader\libGLESv2.dll]
+
+INFO         | SharedLibrary::open for [libEGL.dll]: not found in map, open for the first time
+
+INFO         | SharedLibrary::open for [libEGL.dll] (win32): call LoadLibraryA
+
+INFO         | SharedLibrary::open succeeded for [libEGL.dll]. File name: [C:\Users\sayye\AppData\Local\Android\Sdk\emulator\lib64\gles_swiftshader\libEGL.dll]
+
+INFO         | Initializing VkEmulation features:
+INFO         |     glInteropSupported: false
+INFO         |     useDeferredCommands: true
+INFO         |     createResourceWithRequirements: true
+INFO         |     useVulkanComposition: false
+INFO         |     useVulkanNativeSwapchain: false
+INFO         |     enable guestRenderDoc: false
+INFO         |     ASTC LDR emulation mode: 2
+INFO         |     enable ETC2 emulation: true
+INFO         |     enable Ycbcr emulation: false
+INFO         |     guestVulkanOnly: false
+INFO         |     useDedicatedAllocations: false
+INFO         | Graphics Adapter Vendor Google (Google Inc.)
+INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (Google SwiftShader)
+INFO         | Graphics API Version OpenGL ES 3.0 (OpenGL ES 3.0 SwiftShader 4.0.0.1)
+INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_standard_derivatives GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 
+INFO         | Graphics Device Extensions N/A
+INFO         | Sending adb public key [QAAAAMW52oHzorfojtbVv6geO2qk0gwjQDvSbUlITzT19VGkQkaRD5Ogg7P1hC2qmO/MpEp+6AFYH9zJsi3kmrXSQKssiLKRd+V9jBuwFWplmGGazUKgttcXMmZEtbtOqidwgW9gwN0CCuYoEBkGKIRaAo2M1tQNEzlNn61I386yNThOQ+J7AjzfBuuZoEJflCSZ9ieSbFkNtGz/pg1fzyAIAA2SY2fnPWcuCZ+SXHnAGU399Akw5F2O2eoRuievX0jhWxS+kQFtSFoQpaJguUsUfiblKASvigYZzw0or+AfNl3S5W7qIoCVefO6Ra53BeuJbvP4mrNKsAhR/55az+mctzg6U1i7rKdWG+p8JrsBfzcifUHzauIdvd16Bl7HTey9L4gJDwR9sFcsCvMpfuHC0MYTZrF1EMBIUXe4u0DJVJgWm03rNOPVN1yt/sYppHr7nQDsMPYN9HMR19lxjPM/ZTZLvWATbCDtpu4hXBPoJ5sjBobcWcyOSWDR90zminjHHOtzPXDBBKpX6s4jJ2BUJtWlNnYQONBePS2mkCbtrrrPggyykJwWJTOfirRiX3OjefCpnp3dxKJ5EXHFButBHlhNXMyINywBoyWzXTfkUl4Yd6edgMsbhnM3fa4jetFRvaQgghH2lMyA5WpYRdxT0mYkq29MCAaILuwTXROCggsEEO4DtwEAAQA= @unknown]
+WHPX on Windows 10.0.26200 detected.
+Windows Hypervisor Platform accelerator is operational
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 0]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 2]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 3]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 4]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 5]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 6]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 7]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 8]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 9]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 13]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 15]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 16]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 23]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 24]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 0]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 2]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 3]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 4]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 5]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 6]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 7]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 8]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 9]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 13]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 15]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 16]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 23]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 24]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 0]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 2]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 3]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 4]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 5]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 6]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 7]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 8]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 9]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 13]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 15]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 16]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 23]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 24]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 0]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 2]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 3]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 4]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 5]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 6]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 7]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 8]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 9]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 13]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 15]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 16]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 23]
+host doesn't support requested feature: CPUID.80000001H:EDX [bit 24]
+INFO         | Monitoring duration of emulator setup.
+WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
+INFO         | Using security allow list from: C:\Users\sayye\AppData\Local\Android\Sdk\emulator\lib\emulator_access.json
+WARNING      | *** Basic token auth should only be used by android-studio ***
+INFO         | The active JSON Web Key Sets can be found here: C:\Users\sayye\AppData\Local\Temp\avd\running\93488\jwks\1840be4a-a1de-4557-94e3-3153d7c4c38f\active.jwk
+INFO         | Scanning C:\Users\sayye\AppData\Local\Temp\avd\running\93488\jwks\1840be4a-a1de-4557-94e3-3153d7c4c38f for jwk keys.
+INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
+INFO         | Advertising in: C:\Users\sayye\AppData\Local\Temp\avd\running\pid_93488.ini
+INFO         | Setting display: 0 configuration to: 480x1040, dpi: 200x200 
+INFO         | setDisplayActiveConfig 0
+USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+WARNING      | UpdateCheck: Failure: SSL peer certificate or SSH remote key was not OK
+WARNING      | UpdateCheck: failed to get the latest version, skipping check (current version '35.4.9-13025442')
+INFO         | Activated packet streamer for uwb emulation
+INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Boot completed in 124642 ms
+INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+INFO         | IPv4 server found: 114.79.129.2
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | IPv4 server found: 114.79.129.2
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | IPv4 server found: 114.79.129.2
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: 9028:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: a82e:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: c83c:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0
+INFO         | Ignore IPv6 address: e842:6bc5:2702:0:9028:6bc5:2702:0

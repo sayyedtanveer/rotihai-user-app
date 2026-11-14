@@ -1,0 +1,20 @@
+[
+  {
+    "id": "774dfa2b-84a8-4a70-8059-9b226365ec54",
+    "title": "RotiHai Subscription",
+    "subtitle": "Daily lunch, dinner & fresh rotis —\nhomemade meals delivered to your doorstep.",
+    "buttonText": "Subscribe Now",
+    "gradientFrom": "orange-600",
+    "gradientVia": "amber-600",
+    "gradientTo": "yellow-600",
+    "emoji1": "📦",
+    "emoji2": "🍛",
+    "emoji3": "❤️",
+    "actionType": "subscription",
+    "actionValue": "",
+    "isActive": true,
+    "displayOrder": 1,
+    "createdAt": "2026-03-31T11:16:47.788Z",
+    "updatedAt": "2026-05-10T13:30:53.881Z"
+  }
+]

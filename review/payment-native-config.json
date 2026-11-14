@@ -1,0 +1,89 @@
+{
+  "androidQueries": [
+    {
+      "intent": [
+        {
+          "action": [
+            {
+              "$": {
+                "android:name": "android.intent.action.VIEW"
+              }
+            }
+          ],
+          "category": [
+            {
+              "$": {
+                "android:name": "android.intent.category.BROWSABLE"
+              }
+            }
+          ],
+          "data": [
+            {
+              "$": {
+                "android:scheme": "https"
+              }
+            }
+          ]
+        },
+        {
+          "action": [
+            {
+              "$": {
+                "android:name": "android.intent.action.VIEW"
+              }
+            }
+          ],
+          "category": [
+            {
+              "$": {
+                "android:name": "android.intent.category.BROWSABLE"
+              }
+            }
+          ],
+          "data": [
+            {
+              "$": {
+                "android:scheme": "upi"
+              }
+            }
+          ]
+        },
+        {
+          "action": [
+            {
+              "$": {
+                "android:name": "android.intent.action.VIEW"
+              }
+            }
+          ],
+          "category": [
+            {
+              "$": {
+                "android:name": "android.intent.category.BROWSABLE"
+              }
+            }
+          ],
+          "data": [
+            {
+              "$": {
+                "android:scheme": "tez"
+              }
+            }
+          ]
+        }
+      ],
+      "package": [
+        {
+          "$": {
+            "android:name": "com.google.android.apps.nbu.paisa.user"
+          }
+        }
+      ]
+    }
+  ],
+  "iosSchemes": [
+    "gpay",
+    "tez",
+    "upi"
+  ]
+}

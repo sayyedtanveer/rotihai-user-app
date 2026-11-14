@@ -1,0 +1,417 @@
+{
+  "date": "2026-11-14",
+  "platform": "Android emulator / Expo Go",
+  "expectedScreensAndStates": [
+    "Home",
+    "NoKitchens",
+    "Offline",
+    "Loading",
+    "Explore",
+    "Catalog",
+    "LargeMenu",
+    "ComboMenu",
+    "ClosedKitchen",
+    "Product",
+    "VariantProduct",
+    "NoImageProduct",
+    "Cart",
+    "CartUnavailable",
+    "Checkout",
+    "Orders",
+    "OrderDetails",
+    "Subscriptions",
+    "Subscribe",
+    "SubscriptionDetails",
+    "CustomSubscription",
+    "Payment",
+    "Account",
+    "GuestAccount",
+    "GuestCart",
+    "GuestAddress",
+    "GuestCheckout",
+    "Profile",
+    "Address",
+    "Wallet",
+    "Referrals",
+    "Notifications",
+    "Privacy",
+    "Recovery",
+    "DeliveryArea",
+    "Startup",
+    "Launch",
+    "Phone",
+    "EntryPhone",
+    "OTP",
+    "Name",
+    "Location",
+    "ConfirmAddress"
+  ],
+  "captures": [
+    {
+      "name": "Account",
+      "group": "Account",
+      "path": "native/Account.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:32.182Z"
+    },
+    {
+      "name": "Address",
+      "group": "Account",
+      "path": "native/Address.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:16:49.469Z"
+    },
+    {
+      "name": "Cart",
+      "group": "Basket",
+      "path": "native/Cart.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:11:45.388Z"
+    },
+    {
+      "name": "CartUnavailable",
+      "group": "Basket",
+      "path": "native/CartUnavailable.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:24:35.223Z"
+    },
+    {
+      "name": "Catalog",
+      "group": "Discovery",
+      "path": "native/Catalog.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:23:56.016Z"
+    },
+    {
+      "name": "Checkout",
+      "group": "Basket",
+      "path": "native/Checkout.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:46:32.214Z"
+    },
+    {
+      "name": "CheckoutBill",
+      "group": "Basket",
+      "path": "native/CheckoutBill.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:54:10.096Z"
+    },
+    {
+      "name": "ClosedKitchen",
+      "group": "Discovery",
+      "path": "native/ClosedKitchen.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:12:46.543Z"
+    },
+    {
+      "name": "ComboMenu",
+      "group": "Discovery",
+      "path": "native/ComboMenu.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:32:29.537Z"
+    },
+    {
+      "name": "ConfirmAddress",
+      "group": "Onboarding",
+      "path": "native/ConfirmAddress.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:19:03.360Z"
+    },
+    {
+      "name": "CustomSubscription",
+      "group": "Subscriptions",
+      "path": "native/CustomSubscription.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:21.000Z"
+    },
+    {
+      "name": "DeliveryArea",
+      "group": "Onboarding",
+      "path": "native/DeliveryArea.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:17:28.552Z"
+    },
+    {
+      "name": "EntryPhone",
+      "group": "Onboarding",
+      "path": "native/EntryPhone.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:42:38.978Z"
+    },
+    {
+      "name": "Explore",
+      "group": "Discovery",
+      "path": "native/Explore.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:23:50.180Z"
+    },
+    {
+      "name": "GuestAccount",
+      "group": "Account",
+      "path": "native/GuestAccount.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:37.734Z"
+    },
+    {
+      "name": "GuestAddress",
+      "group": "Basket",
+      "path": "native/GuestAddress.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:43:04.200Z"
+    },
+    {
+      "name": "GuestCart",
+      "group": "Basket",
+      "path": "native/GuestCart.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:42:49.241Z"
+    },
+    {
+      "name": "GuestCartToAddress",
+      "group": "Basket",
+      "path": "native/GuestCartToAddress.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:54:47.126Z"
+    },
+    {
+      "name": "GuestCheckout",
+      "group": "Basket",
+      "path": "native/GuestCheckout.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:43:20.083Z"
+    },
+    {
+      "name": "Home",
+      "group": "Discovery",
+      "path": "native/Home.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:42:33.050Z"
+    },
+    {
+      "name": "HomeMealsInactive",
+      "group": "Discovery",
+      "path": "native/HomeMealsInactive.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:50:51.446Z"
+    },
+    {
+      "name": "LargeMenu",
+      "group": "Discovery",
+      "path": "native/LargeMenu.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:24:10.758Z"
+    },
+    {
+      "name": "Launch",
+      "group": "Onboarding",
+      "path": "native/Launch.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:18:33.108Z"
+    },
+    {
+      "name": "Loading",
+      "group": "States",
+      "path": "native/Loading.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:24:29.530Z"
+    },
+    {
+      "name": "LoadingState",
+      "group": "States",
+      "path": "native/LoadingState.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:52:01.588Z"
+    },
+    {
+      "name": "Location",
+      "group": "Onboarding",
+      "path": "native/Location.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:18:55.805Z"
+    },
+    {
+      "name": "MenuComboSelected",
+      "group": "Discovery",
+      "path": "native/MenuComboSelected.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:50:02.549Z"
+    },
+    {
+      "name": "MenuDishes",
+      "group": "Discovery",
+      "path": "native/MenuDishes.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:55:36.105Z"
+    },
+    {
+      "name": "MenuSections",
+      "group": "Discovery",
+      "path": "native/MenuSections.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:49:55.968Z"
+    },
+    {
+      "name": "Name",
+      "group": "Onboarding",
+      "path": "native/Name.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:18:49.908Z"
+    },
+    {
+      "name": "NoImageProduct",
+      "group": "Basket",
+      "path": "native/NoImageProduct.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:12:58.581Z"
+    },
+    {
+      "name": "NoKitchens",
+      "group": "States",
+      "path": "native/NoKitchens.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:24:17.229Z"
+    },
+    {
+      "name": "NoKitchensState",
+      "group": "States",
+      "path": "native/NoKitchensState.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:51:15.243Z"
+    },
+    {
+      "name": "Notifications",
+      "group": "Account",
+      "path": "native/Notifications.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:17:07.026Z"
+    },
+    {
+      "name": "Offline",
+      "group": "States",
+      "path": "native/Offline.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:24:23.284Z"
+    },
+    {
+      "name": "OfflineState",
+      "group": "States",
+      "path": "native/OfflineState.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:51:37.965Z"
+    },
+    {
+      "name": "OrderDetails",
+      "group": "Account",
+      "path": "native/OrderDetails.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:13:16.914Z"
+    },
+    {
+      "name": "Orders",
+      "group": "Account",
+      "path": "native/Orders.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:13:10.997Z"
+    },
+    {
+      "name": "OTP",
+      "group": "Onboarding",
+      "path": "native/OTP.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:18:44.145Z"
+    },
+    {
+      "name": "Payment",
+      "group": "Basket",
+      "path": "native/Payment.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:44:44.536Z"
+    },
+    {
+      "name": "Phone",
+      "group": "Onboarding",
+      "path": "native/Phone.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:43:40.206Z"
+    },
+    {
+      "name": "Privacy",
+      "group": "Account",
+      "path": "native/Privacy.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:17:13.188Z"
+    },
+    {
+      "name": "Product",
+      "group": "Basket",
+      "path": "native/Product.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:11:39.403Z"
+    },
+    {
+      "name": "Profile",
+      "group": "Account",
+      "path": "native/Profile.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:43.194Z"
+    },
+    {
+      "name": "Recovery",
+      "group": "Account",
+      "path": "native/Recovery.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:45:17.574Z"
+    },
+    {
+      "name": "Referrals",
+      "group": "Account",
+      "path": "native/Referrals.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:17:01.529Z"
+    },
+    {
+      "name": "Startup",
+      "group": "Onboarding",
+      "path": "native/Startup.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T12:46:59.852Z"
+    },
+    {
+      "name": "Subscribe",
+      "group": "Subscriptions",
+      "path": "native/Subscribe.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:09.937Z"
+    },
+    {
+      "name": "SubscriptionDetails",
+      "group": "Subscriptions",
+      "path": "native/SubscriptionDetails.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:15.611Z"
+    },
+    {
+      "name": "Subscriptions",
+      "group": "Subscriptions",
+      "path": "native/Subscriptions.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:15:04.283Z"
+    },
+    {
+      "name": "VariantProduct",
+      "group": "Basket",
+      "path": "native/VariantProduct.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:12:52.518Z"
+    },
+    {
+      "name": "Wallet",
+      "group": "Account",
+      "path": "native/Wallet.png",
+      "fixture": true,
+      "capturedAt": "2026-11-14T10:16:55.642Z"
+    }
+  ],
+  "webReference": "Deployed UI with isolated public catalog and sample-account responses",
+  "missing": []
+}

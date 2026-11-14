@@ -1,0 +1,38 @@
+import {checkoutAddress} from '../core/storage/checkoutState';
+import React,{useEffect,useState} from 'react';
+import {Linking,Pressable,ScrollView,Text,View} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
+import {AppProviders} from '../core/providers/AppProviders';
+import {useDeliveryArea} from '../core/location/DeliveryAreaProvider';
+import {CustomerNavigator} from '../presentation/user/navigation/CustomerNavigator';
+import {StartupSplash} from '../presentation/user/screens/StartupSplash';
+import {LaunchScreen,PhoneScreen,OtpScreen,NameScreen,LocationScreen} from '../presentation/user/screens/OnboardingScreens';
+import {ConfirmAddressScreen} from '../presentation/user/screens/ConfirmAddressScreen';
+import {DeliveryAreaScreen} from '../presentation/user/screens/DeliveryAreaScreen';
+import {reviewAddress,reviewCartItem,reviewChef,reviewClosedChef,reviewProduct,reviewVariant,reviewNoImage,setReviewCase} from './transport';
+export const reviewScreens=['Home','NoKitchens','Offline','Loading','Explore','Catalog','LargeMenu','ComboMenu','ClosedKitchen','Product','VariantProduct','NoImageProduct','Cart','CartUnavailable','Checkout','Orders','OrderDetails','Subscriptions','Subscribe','SubscriptionDetails','CustomSubscription','Payment','Account','GuestAccount','GuestCart','GuestAddress','GuestCheckout','Profile','Address','Wallet','Referrals','Notifications','Privacy','Recovery','DeliveryArea','Startup','Launch','Phone','EntryPhone','OTP','Name','Location','ConfirmAddress'];
+function screenFromUrl(url:string|null|undefined){const value=url?.match(/[?&]screen=([^&]+)/)?.[1];return value?decodeURIComponent(value):'';}
+export function ReviewApp(){return <AppProviders><ReviewRoot/></AppProviders>;}
+function ReviewRoot(){
+ const delivery=useDeliveryArea(),[ready,setReady]=useState(false),[screen,setScreen]=useState(''),[reviewKey,setReviewKey]=useState(0),[guestReady,setGuestReady]=useState(false);
+ useEffect(()=>{void Linking.getInitialURL().then(url=>setScreen(screenFromUrl(url)));const sub=Linking.addEventListener('url',event=>{setScreen(screenFromUrl(event.url));setReviewKey(value=>value+1);});return()=>sub.remove();},[]);
+ useEffect(()=>{if(!delivery.ready)return;void(async()=>{await delivery.select({latitude:19.0728,longitude:72.8826,pincode:'400070',area:'Kurla West',source:'pincode'});await AsyncStorage.setItem('customer-cart:ui-review-only',JSON.stringify([reviewCartItem]));setReady(true);})();},[delivery.ready]);
+ useEffect(()=>{let alive=true;if(!screen.startsWith('Guest'))return;setGuestReady(false);void(async()=>{await AsyncStorage.removeItem('rotihai.review.order-attempt:guest');await AsyncStorage.setItem('customer-cart:ui-review-guest',JSON.stringify([reviewCartItem]));if(screen==='GuestCheckout')await checkoutAddress.save('guest',reviewAddress);else await checkoutAddress.clear('guest');if(alive)setGuestReady(true);})();return()=>{alive=false;};},[screen,reviewKey]);
+ setReviewCase(screen);
+ const destinations:Record<string,any>={GuestCart:{name:'Cart'},GuestAddress:{name:'Address',params:{checkoutCartKey:reviewCartItem.chefId+':'+reviewCartItem.categoryId}},GuestCheckout:{name:'Checkout',params:{cartKey:reviewCartItem.chefId+':'+reviewCartItem.categoryId}},Home:{name:'Tabs',params:{screen:'Home'}},NoKitchens:{name:'Tabs',params:{screen:'Home'}},Offline:{name:'Tabs',params:{screen:'Home'}},Loading:{name:'Tabs',params:{screen:'Home'}},CartUnavailable:{name:'Cart'},LargeMenu:{name:'Catalog',params:{chefId:require('../../review/public-data/chefs.json').find((c:any)=>c.name==='Juicy Hut')?.id,title:'Juicy Hut'}},Explore:{name:'Tabs',params:{screen:'Explore'}},Orders:{name:'Tabs',params:{screen:'Orders'}},Account:{name:'Tabs',params:{screen:'Account'}},GuestAccount:{name:'Tabs',params:{screen:'Account'}},Catalog:{name:'Catalog',params:{chefId:reviewChef.id,title:reviewChef.name}},ComboMenu:{name:'Catalog',params:{chefId:require('../../review/public-data/chefs.json').find((c:any)=>c.name==='Franky Adda')?.id,title:'Franky Adda'}},ClosedKitchen:{name:'Catalog',params:{chefId:reviewClosedChef.id,title:reviewClosedChef.name}},Product:{name:'Product',params:{id:reviewProduct.id}},VariantProduct:{name:'Product',params:{id:reviewVariant.id}},NoImageProduct:{name:'Product',params:{id:reviewNoImage.id}},Checkout:{name:'Checkout',params:{cartKey:reviewCartItem.chefId+':'+reviewCartItem.categoryId}},OrderDetails:{name:'OrderDetails',params:{id:'UI-REVIEW-ORDER'}},Subscribe:{name:'Subscribe',params:{planId:require('../../review/public-data/plans.json')[0]?.id}},SubscriptionDetails:{name:'SubscriptionDetails',params:{id:'UI-REVIEW-SUBSCRIPTION'}},Payment:{name:'Payment',params:{id:'UI-REVIEW-ORDER',kind:'order',amount:100}}};
+ let content:React.ReactNode;
+ if(!ready||(screen.startsWith('Guest')&&!guestReady))content=<StartupSplash/>;
+ else if(!screen)content=<SafeAreaProvider><SafeAreaView style={{flex:1}}><ScrollView contentContainerStyle={{padding:20,gap:10}}><Text style={{fontSize:22,fontWeight:'700'}}>Customer screen review</Text>{reviewScreens.map(name=><Pressable key={name} accessibilityRole="button" onPress={()=>setScreen(name)} style={{padding:14,borderRadius:10,borderWidth:1,borderColor:'#ddd'}}><Text>{name}</Text></Pressable>)}</ScrollView></SafeAreaView></SafeAreaProvider>;
+ else if(screen==='Startup')content=<StartupSplash/>;
+ else if(screen==='Launch')content=<LaunchScreen onContinue={()=>{}}/>;
+ else if(screen==='EntryPhone')content=<PhoneScreen provisional onSubmit={()=>{}} onPrivacy={()=>{}}/>;
+ else if(screen==='Phone')content=<PhoneScreen onSubmit={()=>{}} onPrivacy={()=>{}}/>;
+ else if(screen==='OTP')content=<OtpScreen phone="9000000000" codeLength={6} resendInSeconds={40} onResend={()=>{}} onChangePhone={()=>{}} onVerify={()=>{}}/>;
+ else if(screen==='Name')content=<NameScreen onSubmit={()=>{}}/>;
+ else if(screen==='Location')content=<LocationScreen onUseCurrentLocation={()=>{}} onChooseAddress={()=>{}}/>;
+ else if(screen==='ConfirmAddress')content=<ConfirmAddressScreen initial={{...reviewAddress,houseNumber:reviewAddress.building,landmark:'',address:'Sample delivery address',source:'manual'}} busy={false} error={null} onSave={()=>{}} onBack={()=>setScreen('')}/>;
+ else if(screen==='DeliveryArea')content=<SafeAreaProvider><SafeAreaView style={{flex:1}}><DeliveryAreaScreen/></SafeAreaView></SafeAreaProvider>;
+ else content=<CustomerNavigator key={screen+':'+reviewKey} token={screen.startsWith('Guest')?'':'ui-review-local-session'} onLogout={()=>setScreen('GuestAccount')} onLogin={()=>setScreen('OTP')} destination={destinations[screen]||{name:screen}}/>;
+ return <View style={{flex:1,backgroundColor:'#faf8f5'}}><Pressable accessibilityRole="button" accessibilityLabel="Return to screen review index" onPress={()=>setScreen('')} style={{paddingTop:28,paddingBottom:7,paddingHorizontal:15,backgroundColor:'#30251f'}}><Text style={{color:'#ffda8a',fontSize:9,fontWeight:'700',letterSpacing:1}}>UI REVIEW · SAMPLE ACCOUNT · NO LIVE WRITES {screen?'· '+screen:''}</Text></Pressable>{content}</View>;
+}

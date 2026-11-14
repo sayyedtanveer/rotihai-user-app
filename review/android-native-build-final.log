@@ -1,0 +1,463 @@
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=C:\Users\sayye\source\repos\rotihai-user\review\native\build-truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:processResources NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:jar UP-TO-DATE
+> Task :gradle-plugin:shared:compileJava NO-SOURCE
+> Task :gradle-plugin:shared:processResources NO-SOURCE
+> Task :gradle-plugin:shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:jar UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:settings-plugin:classes UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:jar UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:classes UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:jar UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-module-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-module-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-module-gradle-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:classes UP-TO-DATE
+> Task :expo-gradle-plugin:expo-max-sdk-override-plugin:jar UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:classes UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:jar UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:processResources UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:classes UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:jar UP-TO-DATE
+> Task :expo-module-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :expo-module-gradle-plugin:compileJava NO-SOURCE
+> Task :expo-module-gradle-plugin:classes UP-TO-DATE
+> Task :expo-module-gradle-plugin:jar UP-TO-DATE
+
+> Configure project :
+[32m[ExpoRootProject][0m The Kotlin Gradle plugin used by this build is [32m2.2.10[0m, but the version catalog declares [33m2.2.0[0m. Using the plugin version.
+[32m[ExpoRootProject][0m Using the following versions:
+  - buildTools:  [32m37.0.0[0m
+  - minSdk:      [32m24[0m
+  - compileSdk:  [32m37[0m
+  - targetSdk:   [32m36[0m
+  - ndk:         [32m27.1.12297006[0m
+  - kotlin:      [32m2.2.10[0m
+  - ksp:         [32m2.2.10-2.0.2[0m
+
+> Configure project :app
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+ ℹ️  [33mApplying gradle plugin[0m '[32mexpo-max-sdk-override-plugin[0m'
+  [expo-max-sdk-override-plugin] This plugin will find all permissions declared with `android:maxSdkVersion`. If there exists a declaration with the `android:maxSdkVersion` annotation and another one without, the plugin will remove the annotation from the final merged manifest. In order to see a log with the changes run a clean build of the app.
+WARNING: API 'applicationVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+The legacy variant API is disabled by default in AGP 9.0, but can be re-enabled by adding 
+    android.newDsl=false
+to this project's gradle.properties file.
+For more information, see http://developer.android.com/build/r/new-dsl.
+
+To determine what is calling applicationVariants, use -Pandroid.debug.obsoleteApi=true on the command line to display more information.
+WARNING: API 'testVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+The legacy variant API is disabled by default in AGP 9.0, but can be re-enabled by adding 
+    android.newDsl=false
+to this project's gradle.properties file.
+For more information, see http://developer.android.com/build/r/new-dsl.
+
+To determine what is calling testVariants, use -Pandroid.debug.obsoleteApi=true on the command line to display more information.
+WARNING: API 'unitTestVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+The legacy variant API is disabled by default in AGP 9.0, but can be re-enabled by adding 
+    android.newDsl=false
+to this project's gradle.properties file.
+For more information, see http://developer.android.com/build/r/new-dsl.
+
+To determine what is calling unitTestVariants, use -Pandroid.debug.obsoleteApi=true on the command line to display more information.
+
+> Configure project :expo
+WARNING: API 'libraryVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+The legacy variant API is disabled by default in AGP 9.0, but can be re-enabled by adding 
+    android.newDsl=false
+to this project's gradle.properties file.
+For more information, see http://developer.android.com/build/r/new-dsl.
+
+To determine what is calling libraryVariants, use -Pandroid.debug.obsoleteApi=true on the command line to display more information.
+
+Using expo modules
+  - [32mexpo-dom-webview[0m (58.0.2)
+  - [32mexpo-log-box[0m (58.0.15)
+  - [32mexpo-constants[0m (58.0.16)
+  - [32mexpo-modules-core[0m (58.1.0)
+  - [33m[📦][0m [32mexpo-application[0m (58.1.2)
+  - [33m[📦][0m [32mexpo-asset[0m (58.0.21)
+  - [33m[📦][0m [32mexpo-clipboard[0m (58.0.4)
+  - [33m[📦][0m [32mexpo-file-system[0m (58.0.13)
+  - [33m[📦][0m [32mexpo-font[0m (58.0.12)
+  - [33m[📦][0m [32mexpo-keep-awake[0m (58.0.4)
+  - [33m[📦][0m [32mexpo-location[0m (58.0.22)
+  - [33m[📦][0m [32mexpo-network[0m (58.0.5)
+  - [33m[📦][0m [32mexpo-notifications[0m (58.1.9)
+  - [33m[📦][0m [32mexpo-secure-store[0m (58.0.3)
+  - [33m[📦][0m [32mexpo-splash-screen[0m (58.0.14)
+  - [33m[📦][0m [32mexpo-status-bar[0m (58.0.5)
+
+
+> Task :app:generateAutolinkingNewArchitectureFiles UP-TO-DATE
+> Task :app:generateAutolinkingPackageList UP-TO-DATE
+> Task :app:generateCodegenSchemaFromJavaScript SKIPPED
+> Task :app:generateCodegenArtifactsFromSchema SKIPPED
+> Task :app:generateReactNativeEntryPoint UP-TO-DATE
+> Task :expo-constants:preBuild UP-TO-DATE
+> Task :expo-dom-webview:preBuild UP-TO-DATE
+> Task :expo-log-box:preBuild UP-TO-DATE
+> Task :expo-modules-core:decompressPrebuiltNativeLibs UP-TO-DATE
+> Task :expo-modules-core:preBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preBuild UP-TO-DATE
+> Task :react-native-maps:generateCodegenSchemaFromJavaScript SKIPPED
+> Task :react-native-maps:generateCodegenArtifactsFromSchema SKIPPED
+> Task :react-native-maps:preBuild UP-TO-DATE
+> Task :react-native-safe-area-context:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-safe-area-context:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-safe-area-context:preBuild UP-TO-DATE
+> Task :react-native-screens:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-screens:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-screens:preBuild UP-TO-DATE
+> Task :react-native-svg:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-svg:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-svg:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo:generateInlineModules
+> Task :expo:generatePackagesList UP-TO-DATE
+> Task :expo:preBuild
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :expo:preDebugBuild
+> Task :expo:processDebugNavigationResources UP-TO-DATE
+> Task :expo-dom-webview:preDebugBuild UP-TO-DATE
+> Task :expo-dom-webview:processDebugNavigationResources UP-TO-DATE
+> Task :expo-log-box:preDebugBuild UP-TO-DATE
+> Task :expo-log-box:processDebugNavigationResources UP-TO-DATE
+> Task :expo-modules-core:preDebugBuild UP-TO-DATE
+> Task :expo-modules-core:processDebugNavigationResources UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preDebugBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:processDebugNavigationResources UP-TO-DATE
+> Task :react-native-maps:preDebugBuild UP-TO-DATE
+> Task :react-native-maps:processDebugNavigationResources UP-TO-DATE
+> Task :react-native-safe-area-context:preDebugBuild UP-TO-DATE
+> Task :react-native-safe-area-context:processDebugNavigationResources UP-TO-DATE
+> Task :react-native-screens:preDebugBuild UP-TO-DATE
+> Task :react-native-screens:processDebugNavigationResources UP-TO-DATE
+> Task :react-native-svg:preDebugBuild UP-TO-DATE
+> Task :react-native-svg:processDebugNavigationResources UP-TO-DATE
+> Task :expo:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo:generateDebugResources UP-TO-DATE
+> Task :expo:packageDebugResources UP-TO-DATE
+> Task :expo:parseDebugLocalResources UP-TO-DATE
+> Task :expo:generateDebugRFile UP-TO-DATE
+> Task :expo-modules-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-modules-core:generateDebugBuildConfig UP-TO-DATE
+> Task :expo-modules-core:generateDebugResources UP-TO-DATE
+> Task :expo-modules-core:packageDebugResources UP-TO-DATE
+> Task :expo-modules-core:parseDebugLocalResources UP-TO-DATE
+> Task :expo-modules-core:generateDebugRFile UP-TO-DATE
+
+> Task :expo-constants:createDebugExpoConfig
+env: load .env
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_WEB_BASE_URL
+
+> Task :expo-modules-core:compileDebugKotlin UP-TO-DATE
+> Task :expo-modules-core:javaPreCompileDebug UP-TO-DATE
+> Task :expo-modules-core:compileDebugJavaWithJavac UP-TO-DATE
+> Task :expo-modules-core:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :expo-dom-webview:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-dom-webview:generateDebugResources UP-TO-DATE
+> Task :expo-dom-webview:packageDebugResources UP-TO-DATE
+> Task :expo-dom-webview:parseDebugLocalResources UP-TO-DATE
+> Task :expo-dom-webview:generateDebugRFile UP-TO-DATE
+> Task :expo-dom-webview:compileDebugKotlin UP-TO-DATE
+> Task :expo-dom-webview:javaPreCompileDebug UP-TO-DATE
+> Task :expo-dom-webview:compileDebugJavaWithJavac NO-SOURCE
+> Task :expo-dom-webview:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :expo-log-box:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-log-box:generateDebugBuildConfig UP-TO-DATE
+> Task :expo-log-box:generateDebugResources UP-TO-DATE
+> Task :expo-log-box:packageDebugResources UP-TO-DATE
+> Task :expo-log-box:parseDebugLocalResources UP-TO-DATE
+> Task :expo-log-box:generateDebugRFile UP-TO-DATE
+> Task :expo-log-box:compileDebugKotlin UP-TO-DATE
+> Task :expo-log-box:javaPreCompileDebug UP-TO-DATE
+> Task :expo-log-box:compileDebugJavaWithJavac UP-TO-DATE
+> Task :expo-log-box:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :expo:javaPreCompileDebug UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateDebugBuildConfig UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateDebugResources UP-TO-DATE
+> Task :react-native-async-storage_async-storage:packageDebugResources UP-TO-DATE
+> Task :react-native-async-storage_async-storage:parseDebugLocalResources UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateDebugRFile UP-TO-DATE
+> Task :react-native-async-storage_async-storage:javaPreCompileDebug UP-TO-DATE
+> Task :react-native-async-storage_async-storage:compileDebugJavaWithJavac UP-TO-DATE
+> Task :react-native-async-storage_async-storage:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :react-native-maps:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :react-native-maps:generateDebugBuildConfig UP-TO-DATE
+> Task :react-native-maps:generateDebugResources UP-TO-DATE
+> Task :react-native-maps:packageDebugResources UP-TO-DATE
+> Task :react-native-maps:parseDebugLocalResources UP-TO-DATE
+> Task :react-native-maps:generateDebugRFile UP-TO-DATE
+> Task :react-native-maps:compileDebugKotlin NO-SOURCE
+> Task :react-native-maps:javaPreCompileDebug UP-TO-DATE
+> Task :react-native-maps:compileDebugJavaWithJavac UP-TO-DATE
+> Task :react-native-maps:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :react-native-safe-area-context:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :react-native-safe-area-context:generateDebugBuildConfig UP-TO-DATE
+> Task :react-native-safe-area-context:generateDebugResources UP-TO-DATE
+> Task :react-native-safe-area-context:packageDebugResources UP-TO-DATE
+> Task :react-native-safe-area-context:parseDebugLocalResources UP-TO-DATE
+> Task :react-native-safe-area-context:generateDebugRFile UP-TO-DATE
+> Task :react-native-safe-area-context:compileDebugKotlin UP-TO-DATE
+> Task :react-native-safe-area-context:javaPreCompileDebug UP-TO-DATE
+> Task :react-native-safe-area-context:compileDebugJavaWithJavac UP-TO-DATE
+> Task :react-native-safe-area-context:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :react-native-screens:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :react-native-screens:generateDebugBuildConfig UP-TO-DATE
+> Task :react-native-screens:generateDebugResources UP-TO-DATE
+> Task :react-native-screens:packageDebugResources UP-TO-DATE
+> Task :react-native-screens:parseDebugLocalResources UP-TO-DATE
+> Task :react-native-screens:generateDebugRFile UP-TO-DATE
+> Task :react-native-screens:compileDebugKotlin UP-TO-DATE
+> Task :react-native-screens:javaPreCompileDebug UP-TO-DATE
+> Task :react-native-screens:compileDebugJavaWithJavac UP-TO-DATE
+> Task :react-native-screens:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :react-native-svg:generateDebugBuildConfig UP-TO-DATE
+> Task :react-native-svg:generateDebugResources UP-TO-DATE
+> Task :react-native-svg:packageDebugResources UP-TO-DATE
+> Task :react-native-svg:parseDebugLocalResources UP-TO-DATE
+> Task :react-native-svg:generateDebugRFile UP-TO-DATE
+> Task :react-native-svg:javaPreCompileDebug UP-TO-DATE
+> Task :react-native-svg:compileDebugJavaWithJavac UP-TO-DATE
+> Task :react-native-svg:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :expo:generateDebugAssets UP-TO-DATE
+> Task :expo:mergeDebugAssets UP-TO-DATE
+> Task :expo-dom-webview:generateDebugAssets UP-TO-DATE
+> Task :expo-dom-webview:mergeDebugAssets UP-TO-DATE
+> Task :expo-log-box:generateDebugAssets UP-TO-DATE
+> Task :expo-log-box:mergeDebugAssets UP-TO-DATE
+> Task :expo-modules-core:generateDebugAssets UP-TO-DATE
+> Task :expo-modules-core:mergeDebugAssets UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateDebugAssets UP-TO-DATE
+> Task :react-native-async-storage_async-storage:mergeDebugAssets UP-TO-DATE
+> Task :react-native-maps:generateDebugAssets UP-TO-DATE
+> Task :react-native-maps:mergeDebugAssets UP-TO-DATE
+> Task :react-native-safe-area-context:generateDebugAssets UP-TO-DATE
+> Task :react-native-safe-area-context:mergeDebugAssets UP-TO-DATE
+> Task :react-native-screens:generateDebugAssets UP-TO-DATE
+> Task :react-native-screens:mergeDebugAssets UP-TO-DATE
+> Task :react-native-svg:generateDebugAssets UP-TO-DATE
+> Task :react-native-svg:mergeDebugAssets UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :expo-dom-webview:processDebugJavaRes UP-TO-DATE
+> Task :expo-log-box:processDebugJavaRes UP-TO-DATE
+> Task :expo-modules-core:processDebugJavaRes UP-TO-DATE
+> Task :react-native-async-storage_async-storage:processDebugJavaRes NO-SOURCE
+> Task :react-native-maps:processDebugJavaRes NO-SOURCE
+> Task :react-native-safe-area-context:processDebugJavaRes UP-TO-DATE
+> Task :react-native-screens:processDebugJavaRes UP-TO-DATE
+> Task :react-native-svg:processDebugJavaRes NO-SOURCE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :react-native-maps:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :react-native-safe-area-context:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :react-native-screens:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :react-native-async-storage_async-storage:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :react-native-svg:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :expo-log-box:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :expo-modules-core:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :expo-dom-webview:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :expo:writeDebugAarMetadata UP-TO-DATE
+> Task :expo-dom-webview:writeDebugAarMetadata UP-TO-DATE
+> Task :expo-log-box:writeDebugAarMetadata UP-TO-DATE
+> Task :expo-modules-core:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-async-storage_async-storage:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-maps:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-safe-area-context:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-screens:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-svg:writeDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :expo:extractDeepLinksDebug UP-TO-DATE
+> Task :expo:processDebugManifest UP-TO-DATE
+> Task :expo-dom-webview:extractDeepLinksDebug UP-TO-DATE
+> Task :expo-dom-webview:processDebugManifest UP-TO-DATE
+> Task :expo-log-box:extractDeepLinksDebug UP-TO-DATE
+> Task :expo-log-box:processDebugManifest UP-TO-DATE
+> Task :expo-modules-core:extractDeepLinksDebug UP-TO-DATE
+> Task :expo-modules-core:processDebugManifest UP-TO-DATE
+> Task :react-native-async-storage_async-storage:extractDeepLinksDebug UP-TO-DATE
+> Task :react-native-async-storage_async-storage:processDebugManifest UP-TO-DATE
+> Task :react-native-maps:extractDeepLinksDebug UP-TO-DATE
+> Task :react-native-maps:processDebugManifest UP-TO-DATE
+> Task :react-native-safe-area-context:extractDeepLinksDebug UP-TO-DATE
+> Task :react-native-safe-area-context:processDebugManifest UP-TO-DATE
+> Task :react-native-screens:extractDeepLinksDebug UP-TO-DATE
+> Task :react-native-screens:processDebugManifest UP-TO-DATE
+> Task :react-native-svg:extractDeepLinksDebug UP-TO-DATE
+> Task :react-native-svg:processDebugManifest UP-TO-DATE
+> Task :expo:mapDebugSourceSetPaths UP-TO-DATE
+> Task :expo:compileDebugLibraryResources UP-TO-DATE
+> Task :expo-dom-webview:mapDebugSourceSetPaths UP-TO-DATE
+> Task :expo-dom-webview:compileDebugLibraryResources UP-TO-DATE
+> Task :expo-log-box:mapDebugSourceSetPaths UP-TO-DATE
+> Task :expo-log-box:compileDebugLibraryResources UP-TO-DATE
+> Task :expo-modules-core:mapDebugSourceSetPaths UP-TO-DATE
+> Task :expo-modules-core:compileDebugLibraryResources UP-TO-DATE
+> Task :react-native-async-storage_async-storage:mapDebugSourceSetPaths UP-TO-DATE
+> Task :react-native-async-storage_async-storage:compileDebugLibraryResources UP-TO-DATE
+> Task :react-native-maps:mapDebugSourceSetPaths UP-TO-DATE
+> Task :react-native-maps:compileDebugLibraryResources UP-TO-DATE
+> Task :react-native-safe-area-context:mapDebugSourceSetPaths UP-TO-DATE
+> Task :react-native-safe-area-context:compileDebugLibraryResources UP-TO-DATE
+> Task :react-native-screens:mapDebugSourceSetPaths UP-TO-DATE
+> Task :react-native-screens:compileDebugLibraryResources UP-TO-DATE
+> Task :react-native-svg:mapDebugSourceSetPaths UP-TO-DATE
+> Task :react-native-svg:compileDebugLibraryResources UP-TO-DATE
+> Task :expo-constants:createExpoFingerprint
+> Task :expo-constants:preDebugBuild
+> Task :expo-constants:processDebugNavigationResources UP-TO-DATE
+> Task :expo-constants:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-constants:generateDebugResources UP-TO-DATE
+> Task :expo-constants:packageDebugResources UP-TO-DATE
+> Task :expo-constants:parseDebugLocalResources UP-TO-DATE
+> Task :expo-constants:generateDebugRFile UP-TO-DATE
+> Task :expo-constants:compileDebugKotlin UP-TO-DATE
+> Task :expo-constants:javaPreCompileDebug UP-TO-DATE
+> Task :expo-constants:compileDebugJavaWithJavac NO-SOURCE
+> Task :expo-constants:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :expo:compileDebugKotlin UP-TO-DATE
+> Task :expo:compileDebugJavaWithJavac NO-SOURCE
+> Task :expo:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :expo-constants:generateDebugAssets UP-TO-DATE
+> Task :expo-constants:mergeDebugAssets
+> Task :expo:processDebugJavaRes UP-TO-DATE
+> Task :expo-constants:processDebugJavaRes UP-TO-DATE
+> Task :expo:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :expo-constants:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :expo-constants:writeDebugAarMetadata UP-TO-DATE
+> Task :expo-constants:extractDeepLinksDebug UP-TO-DATE
+> Task :expo-constants:processDebugManifest UP-TO-DATE
+> Task :expo-constants:mapDebugSourceSetPaths UP-TO-DATE
+> Task :expo-constants:compileDebugLibraryResources UP-TO-DATE
+> Task :expo:mergeDebugJniLibFolders UP-TO-DATE
+> Task :expo:mergeDebugNativeLibs NO-SOURCE
+> Task :expo:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :expo-constants:mergeDebugJniLibFolders UP-TO-DATE
+> Task :expo-constants:mergeDebugNativeLibs NO-SOURCE
+> Task :expo-constants:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :expo-dom-webview:mergeDebugJniLibFolders UP-TO-DATE
+> Task :expo-dom-webview:mergeDebugNativeLibs NO-SOURCE
+> Task :expo-dom-webview:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :expo-log-box:mergeDebugJniLibFolders UP-TO-DATE
+> Task :expo-log-box:mergeDebugNativeLibs NO-SOURCE
+> Task :expo-log-box:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :expo-modules-core:unpackExpoModulesV2Cpp UP-TO-DATE
+> Task :expo-modules-core:configureCMakeDebug[x86_64]
+> Task :expo-modules-core:buildCMakeDebug[x86_64]
+> Task :expo-modules-core:mergeDebugJniLibFolders UP-TO-DATE
+> Task :expo-modules-core:mergeDebugNativeLibs UP-TO-DATE
+> Task :expo-modules-core:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :react-native-async-storage_async-storage:mergeDebugJniLibFolders UP-TO-DATE
+> Task :react-native-async-storage_async-storage:mergeDebugNativeLibs NO-SOURCE
+> Task :react-native-async-storage_async-storage:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :react-native-maps:mergeDebugJniLibFolders UP-TO-DATE
+> Task :react-native-maps:mergeDebugNativeLibs NO-SOURCE
+> Task :react-native-maps:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :react-native-safe-area-context:mergeDebugJniLibFolders UP-TO-DATE
+> Task :react-native-safe-area-context:mergeDebugNativeLibs NO-SOURCE
+> Task :react-native-safe-area-context:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :react-native-screens:configureCMakeDebug[x86_64]
+> Task :react-native-screens:buildCMakeDebug[x86_64]
+> Task :react-native-screens:mergeDebugJniLibFolders
+> Task :react-native-screens:mergeDebugNativeLibs
+> Task :react-native-screens:copyDebugJniLibsProjectOnly
+> Task :react-native-svg:mergeDebugJniLibFolders
+> Task :react-native-svg:mergeDebugNativeLibs NO-SOURCE
+> Task :react-native-svg:copyDebugJniLibsProjectOnly
+> Task :app:configureCMakeDebug[x86_64]
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:compressDebugAssets
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:expoDebugOverrideMaxSdkConflicts UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:dexBuilderDebug UP-TO-DATE
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :app:buildCMakeDebug[x86_64]
+> Task :app:mergeDebugJniLibFolders
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeDebugNativeLibs
+> Task :app:stripDebugDebugSymbols
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+
+[Incubating] Problems report is available at: file:///C:/Users/sayye/source/repos/rotihai-user/android/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 8m 50s
+281 actionable tasks: 25 executed, 256 up-to-date

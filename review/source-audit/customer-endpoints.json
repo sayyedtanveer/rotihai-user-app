@@ -1,0 +1,242 @@
+[
+  {
+    "source": "client/src/pages/CustomSubscriptionRequest.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/custom-subscription/price-per-roti",
+        "line": 106
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 114
+      },
+      {
+        "endpoint": "/api/custom-subscription/requests",
+        "line": 122
+      },
+      {
+        "endpoint": "/api/subscriptions/${subscriptionId}/payment-confirmed",
+        "line": 184
+      },
+      {
+        "endpoint": "/api/custom-subscription/request",
+        "line": 274
+      },
+      {
+        "endpoint": "/api/custom-subscription/request/public",
+        "line": 282
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 296
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/examples/Home.tsx",
+    "endpoints": []
+  },
+  {
+    "source": "client/src/pages/Home.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/orders",
+        "line": 68
+      },
+      {
+        "endpoint": "/api/pending-checkouts/latest",
+        "line": 247
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 376
+      },
+      {
+        "endpoint": "/api/chefs/by-location",
+        "line": 385
+      },
+      {
+        "endpoint": "/api/chefs/by-area",
+        "line": 386
+      },
+      {
+        "endpoint": "/api/chefs",
+        "line": 386
+      },
+      {
+        "endpoint": "/api/chefs/by-location?latitude=${userLatitude}&longitude=${userLongitude}&maxDistance=15",
+        "line": 395
+      },
+      {
+        "endpoint": "/api/chefs/by-area/${encodeURIComponent(selectedArea)}",
+        "line": 405
+      },
+      {
+        "endpoint": "/api/products",
+        "line": 459
+      },
+      {
+        "endpoint": "/api/pending-checkouts/${snapshot.id}",
+        "line": 679
+      },
+      {
+        "endpoint": "/api/geocode",
+        "line": 2104
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/InviteEarn.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/user/referral-stats",
+        "line": 46
+      },
+      {
+        "endpoint": "/api/orders",
+        "line": 50
+      },
+      {
+        "endpoint": "/api/user/referrals",
+        "line": 55
+      },
+      {
+        "endpoint": "/api/referral-settings",
+        "line": 59
+      },
+      {
+        "endpoint": "/api/user/generate-referral",
+        "line": 64
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/Landing.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/login",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/MyOrders.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/orders",
+        "line": 64
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 83
+      },
+      {
+        "endpoint": "/api/chefs",
+        "line": 92
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/MySubscriptions.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/subscriptions",
+        "line": 103
+      },
+      {
+        "endpoint": "/api/subscription-plans",
+        "line": 122
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 131
+      },
+      {
+        "endpoint": "/api/chefs",
+        "line": 140
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 149
+      },
+      {
+        "endpoint": "/api/subscriptions/${subscription.id}/skip-delivery",
+        "line": 571
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/not-found.tsx",
+    "endpoints": []
+  },
+  {
+    "source": "client/src/pages/OrderTracking.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/orders",
+        "line": 55
+      },
+      {
+        "endpoint": "/api/orders/${orderId}",
+        "line": 58
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/PrivacyPolicy.tsx",
+    "endpoints": []
+  },
+  {
+    "source": "client/src/pages/Profile.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/categories",
+        "line": 55
+      },
+      {
+        "endpoint": "/api/chefs",
+        "line": 64
+      },
+      {
+        "endpoint": "/api/user/referral-code",
+        "line": 85
+      },
+      {
+        "endpoint": "/api/user/referrals",
+        "line": 95
+      },
+      {
+        "endpoint": "/api/user/wallet",
+        "line": 105
+      },
+      {
+        "endpoint": "/api/user/wallet/transactions",
+        "line": 115
+      },
+      {
+        "endpoint": "/api/user/wallet/transactions?limit=10",
+        "line": 117
+      },
+      {
+        "endpoint": "/api/wallet-settings",
+        "line": 125
+      },
+      {
+        "endpoint": "/api/orders",
+        "line": 134
+      },
+      {
+        "endpoint": "/api/user/referral-eligibility",
+        "line": 162
+      },
+      {
+        "endpoint": "/api/user/profile",
+        "line": 176
+      },
+      {
+        "endpoint": "/api/user/generate-referral",
+        "line": 604
+      }
+    ]
+  }
+]

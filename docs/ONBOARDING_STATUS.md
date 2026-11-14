@@ -1,0 +1,1 @@
+Onboarding is implemented. See CUSTOMER_COVERAGE.md for the current app-wide scope, configuration and remaining work.

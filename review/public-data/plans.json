@@ -1,0 +1,137 @@
+[
+  {
+    "id": "819d3914-d211-433b-81df-ca2f2d24b043",
+    "name": "Daily  🔴 NON-VEG Lunch Tiffin",
+    "description": "Per Person : 2 soft rotis,  chicken/egg curry, rice & dal. \n",
+    "categoryId": "ce4cbd16-a9ef-4e8b-94fa-9cf1548062b8",
+    "sectionName": "Lunch & Dinner",
+    "sectionOrder": 0,
+    "frequency": "daily",
+    "price": 220,
+    "deliveryDays": [
+      "sunday",
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday"
+    ],
+    "items": [],
+    "isActive": true,
+    "createdAt": "2026-05-10T13:51:31.631Z",
+    "updatedAt": "2026-05-14T14:15:27.970Z"
+  },
+  {
+    "id": "b6dca241-177e-410d-a6ab-0cb7fc5609ea",
+    "name": "Daily Veg Lunch Tiffin",
+    "description": "Per Person : 2  soft rotis, seasonal sabzi, dal and rice. \n ",
+    "categoryId": "ce4cbd16-a9ef-4e8b-94fa-9cf1548062b8",
+    "sectionName": "Lunch & Dinner",
+    "sectionOrder": 0,
+    "frequency": "daily",
+    "price": 180,
+    "deliveryDays": [
+      "sunday",
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday"
+    ],
+    "items": [],
+    "isActive": true,
+    "createdAt": "2026-05-10T13:38:15.472Z",
+    "updatedAt": "2026-05-14T14:15:54.290Z"
+  },
+  {
+    "id": "b66f169d-06e0-4d54-89dd-256da70ba02d",
+    "name": "Weekly Gehu Roti Plan",
+    "description": "10 fresh gehu plain rotis delivered daily for 7 days (70 rotis total)",
+    "categoryId": "ce4cbd16-a9ef-4e8b-94fa-9cf1548062b8",
+    "sectionName": "Roti",
+    "sectionOrder": 0,
+    "frequency": "weekly",
+    "price": 840,
+    "deliveryDays": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+      "sunday"
+    ],
+    "items": [
+      {
+        "name": "Butter Roti",
+        "quantity": 10,
+        "productId": "prod1",
+        "pricePerUnit": 9
+      }
+    ],
+    "isActive": true,
+    "createdAt": "2026-04-01T16:20:24.094Z",
+    "updatedAt": "2026-05-14T14:18:12.726Z"
+  },
+  {
+    "id": "94ec9c74-0679-4e5e-aab2-c116b04de71c",
+    "name": "Monthly Gehu Roti Plan",
+    "description": "10 fresh Gehu plain rotis delivered daily for 30 days (300 rotis total)",
+    "categoryId": "ce4cbd16-a9ef-4e8b-94fa-9cf1548062b8",
+    "sectionName": "Roti",
+    "sectionOrder": 1,
+    "frequency": "monthly",
+    "price": 3300,
+    "deliveryDays": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+      "sunday"
+    ],
+    "items": [
+      {
+        "name": "Butter Roti",
+        "quantity": 10,
+        "productId": "prod1",
+        "pricePerUnit": 9
+      }
+    ],
+    "isActive": true,
+    "createdAt": "2026-04-01T16:20:24.094Z",
+    "updatedAt": "2026-05-14T14:17:23.962Z"
+  },
+  {
+    "id": "75f87d3c-05d7-4e08-bfa9-4d8173d0647f",
+    "name": "Custom Roti Plan (Arif khan - 9 Rotis)",
+    "description": "Custom subscription for Arif khan (9 Rotis/day, 7 days/week)",
+    "categoryId": "8724037e-ece5-4cb9-a2f0-810a728067d7",
+    "sectionName": "Custom Subscriptions",
+    "sectionOrder": 99,
+    "frequency": "monthly",
+    "price": 2970,
+    "deliveryDays": [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+      "sunday"
+    ],
+    "items": [
+      {
+        "id": "roti",
+        "name": "Roti",
+        "quantity": 9
+      }
+    ],
+    "isActive": false,
+    "createdAt": "2026-08-01T19:35:46.729Z",
+    "updatedAt": "2026-08-01T19:35:46.729Z"
+  }
+]

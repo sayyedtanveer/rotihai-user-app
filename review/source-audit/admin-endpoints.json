@@ -1,0 +1,723 @@
+[
+  {
+    "source": "client/src/pages/admin/AdminCartSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/cart-settings",
+        "line": 25
+      },
+      {
+        "endpoint": "/api/admin/categories",
+        "line": 33
+      },
+      {
+        "endpoint": "/api/admin/cart-settings/${id}",
+        "line": 58
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminCategories.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 140
+      },
+      {
+        "endpoint": "/api/admin/categories",
+        "line": 142
+      },
+      {
+        "endpoint": "/api/admin/categories/${id}",
+        "line": 187
+      },
+      {
+        "endpoint": "/api/admin/categories/reorder",
+        "line": 212
+      },
+      {
+        "endpoint": "/api/categories",
+        "line": 218
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminChefs.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 76
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 78
+      },
+      {
+        "endpoint": "/api/admin/categories",
+        "line": 87
+      },
+      {
+        "endpoint": "/api/admin/chefs/${id}",
+        "line": 138
+      },
+      {
+        "endpoint": "/api/chefs",
+        "line": 186
+      },
+      {
+        "endpoint": "/api/geocode-full-address",
+        "line": 271
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminCoupons.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/coupons",
+        "line": 67
+      },
+      {
+        "endpoint": "/api/admin/coupon-stats",
+        "line": 76
+      },
+      {
+        "endpoint": "/api/admin/coupons/${editingCoupon?.id}",
+        "line": 111
+      },
+      {
+        "endpoint": "/api/admin/coupons/${couponId}",
+        "line": 136
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminCustomSubscriptions.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/custom-subscription-requests",
+        "line": 54
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 62
+      },
+      {
+        "endpoint": "/api/custom-subscription/price-per-roti",
+        "line": 70
+      },
+      {
+        "endpoint": "/api/delivery-slots",
+        "line": 78
+      },
+      {
+        "endpoint": "/api/admin/settings/price-per-roti",
+        "line": 90
+      },
+      {
+        "endpoint": "/api/admin/custom-subscription-requests/${requestId}/approve",
+        "line": 112
+      },
+      {
+        "endpoint": "/api/admin/custom-subscription-requests/${requestId}/reject",
+        "line": 136
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionId}/confirm-payment",
+        "line": 160
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminDashboard.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/dashboard/metrics",
+        "line": 132
+      },
+      {
+        "endpoint": "/api/admin/dashboard/charts",
+        "line": 133
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminDeliveryAreas.tsx",
+    "endpoints": []
+  },
+  {
+    "source": "client/src/pages/admin/AdminDeliverySettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 46
+      },
+      {
+        "endpoint": "/api/admin/delivery-settings",
+        "line": 48
+      },
+      {
+        "endpoint": "/api/admin/delivery-personnel",
+        "line": 57
+      },
+      {
+        "endpoint": "/api/admin/delivery-partner-payouts",
+        "line": 66
+      },
+      {
+        "endpoint": "/api/admin/delivery-settings/${id}",
+        "line": 103
+      },
+      {
+        "endpoint": "/api/admin/delivery-personnel/${id}",
+        "line": 168
+      },
+      {
+        "endpoint": "/api/admin/delivery-partner-payouts/${id}",
+        "line": 239
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminDeliveryTimeSlots.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/delivery-slots",
+        "line": 55
+      },
+      {
+        "endpoint": "/api/admin/delivery-slots/${id}",
+        "line": 94
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminInventory.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 39
+      },
+      {
+        "endpoint": "/api/admin/products",
+        "line": 41
+      },
+      {
+        "endpoint": "/api/admin/products/${id}",
+        "line": 48
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminLogin.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/auth/login",
+        "line": 43
+      },
+      {
+        "endpoint": "/api/admin/auth/reset-password",
+        "line": 93
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminManagement.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 36
+      },
+      {
+        "endpoint": "/api/admin/admins",
+        "line": 38
+      },
+      {
+        "endpoint": "/api/admin/admins/${id}",
+        "line": 75
+      },
+      {
+        "endpoint": "/api/admin/admins/${id}/reset-password",
+        "line": 105
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminNotifications.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 14
+      },
+      {
+        "endpoint": "/api/admin/orders",
+        "line": 16
+      },
+      {
+        "endpoint": "/api/admin/products",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/admin/custom-subscription-requests",
+        "line": 30
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminNotificationSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/notification-settings",
+        "line": 36
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminOffers.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/offers",
+        "line": 71
+      },
+      {
+        "endpoint": "/api/admin/products",
+        "line": 81
+      },
+      {
+        "endpoint": "/api/admin/offers/${id}",
+        "line": 136
+      },
+      {
+        "endpoint": "/api/admin/offers/${editingOffer.id}",
+        "line": 158
+      },
+      {
+        "endpoint": "/api/admin/offers/${offerId}/activate",
+        "line": 203
+      },
+      {
+        "endpoint": "/api/admin/offers/${offerId}/deactivate",
+        "line": 222
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminOffersDemo.tsx",
+    "endpoints": []
+  },
+  {
+    "source": "client/src/pages/admin/AdminOrders.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 55
+      },
+      {
+        "endpoint": "/api/admin/orders",
+        "line": 57
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 69
+      },
+      {
+        "endpoint": "/api/admin/delivery-personnel",
+        "line": 77
+      },
+      {
+        "endpoint": "/api/admin/orders/${orderId}/status",
+        "line": 84
+      },
+      {
+        "endpoint": "/api/admin/dashboard/metrics",
+        "line": 89
+      },
+      {
+        "endpoint": "/api/admin/orders/${orderId}/assign-chef",
+        "line": 106
+      },
+      {
+        "endpoint": "/api/admin/orders/${orderId}/assign",
+        "line": 130
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminPartners.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 45
+      },
+      {
+        "endpoint": "/api/admin/partners",
+        "line": 54
+      },
+      {
+        "endpoint": "/api/admin/partners/${id}",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminPayments.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 60
+      },
+      {
+        "endpoint": "/api/admin/orders",
+        "line": 82
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 100
+      },
+      {
+        "endpoint": "/api/admin/users",
+        "line": 108
+      },
+      {
+        "endpoint": "/api/admin/orders/${orderId}/payment",
+        "line": 115
+      },
+      {
+        "endpoint": "/api/admin/dashboard/metrics",
+        "line": 151
+      },
+      {
+        "endpoint": "/api/push/send",
+        "line": 162
+      },
+      {
+        "endpoint": "/api/admin/orders/${orderId}/assign-chef",
+        "line": 191
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminPaymentSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/payment-settings",
+        "line": 39
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminPendingCheckouts.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/pending-checkouts",
+        "line": 48
+      },
+      {
+        "endpoint": "/api/admin/pending-checkouts/${checkoutId}",
+        "line": 57
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminProducts.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 47
+      },
+      {
+        "endpoint": "/api/admin/products",
+        "line": 49
+      },
+      {
+        "endpoint": "/api/admin/categories",
+        "line": 58
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 67
+      },
+      {
+        "endpoint": "/api/admin/products/${id}",
+        "line": 131
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminPromotionalBanners.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/promotional-banners",
+        "line": 39
+      },
+      {
+        "endpoint": "/api/promotional-banners",
+        "line": 66
+      },
+      {
+        "endpoint": "/api/admin/promotional-banners/${id}",
+        "line": 76
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminReferrals.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/referrals",
+        "line": 53
+      },
+      {
+        "endpoint": "/api/admin/referral-stats",
+        "line": 64
+      },
+      {
+        "endpoint": "/api/admin/referrals/${id}/status",
+        "line": 69
+      },
+      {
+        "endpoint": "/api/admin/referrals/${id}/fraud-flag",
+        "line": 85
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminReports.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/reports/${endpoint}?${params}",
+        "line": 57
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 99
+      },
+      {
+        "endpoint": "/api/admin/reports/chef-payout?${params}",
+        "line": 113
+      },
+      {
+        "endpoint": "/api/admin/payouts/mark-paid-bulk",
+        "line": 129
+      },
+      {
+        "endpoint": "/api/admin/payouts/mark-paid",
+        "line": 647
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminRotiSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/roti-settings",
+        "line": 41
+      },
+      {
+        "endpoint": "/api/admin/roti-settings",
+        "line": 60
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin-settings",
+        "line": 95
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminSMSSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/sms-settings",
+        "line": 24
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminSubscriptions.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/unavailability-actions",
+        "line": 65
+      },
+      {
+        "endpoint": "/api/admin/unavailability-actions/count",
+        "line": 78
+      },
+      {
+        "endpoint": "/api/admin/available-chefs",
+        "line": 92
+      },
+      {
+        "endpoint": "/api/admin/available-chefs${params}",
+        "line": 95
+      },
+      {
+        "endpoint": "/api/admin/delivery-actions/${deliveryLogId}/reassign",
+        "line": 106
+      },
+      {
+        "endpoint": "/api/admin/delivery-actions/${deliveryLogId}/skip",
+        "line": 132
+      },
+      {
+        "endpoint": "/api/admin",
+        "line": 155
+      },
+      {
+        "endpoint": "/api/admin/categories",
+        "line": 157
+      },
+      {
+        "endpoint": "/api/admin/subscription-plans",
+        "line": 169
+      },
+      {
+        "endpoint": "/api/admin/subscriptions",
+        "line": 181
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/overdue-preparations",
+        "line": 192
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/missed-deliveries",
+        "line": 207
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/missed-deliveries?${params.toString()}",
+        "line": 214
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/today",
+        "line": 226
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/today-deliveries",
+        "line": 245
+      },
+      {
+        "endpoint": "/api/admin/chefs",
+        "line": 262
+      },
+      {
+        "endpoint": "/api/admin/subscription-plans/${id}",
+        "line": 314
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionId}/adjust",
+        "line": 359
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionId}/assign-chef",
+        "line": 388
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionId}/status",
+        "line": 415
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionId}",
+        "line": 438
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionId}/delivery-status",
+        "line": 471
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${sub.id}/confirm-payment",
+        "line": 1179
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionForChefAssignment.id}/assign-chef",
+        "line": 2007
+      },
+      {
+        "endpoint": "/api/admin/subscriptions/${subscriptionForChefAssignment.id}/confirm-payment",
+        "line": 2024
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminUsers.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin",
+        "line": 24
+      },
+      {
+        "endpoint": "/api/admin/users",
+        "line": 26
+      },
+      {
+        "endpoint": "/api/admin/users/${id}",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminVisitorAnalytics.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/reports/visitors",
+        "line": 19
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminWalletLogs.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/wallet-transactions",
+        "line": 35
+      },
+      {
+        "endpoint": "/api/admin/wallet-transactions?date=${encodeURIComponent(dateFilter)}",
+        "line": 39
+      },
+      {
+        "endpoint": "/api/admin/wallet-stats",
+        "line": 57
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/AdminWalletSettings.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/wallet-settings",
+        "line": 29
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/ChefPerformance.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/chef-performance",
+        "line": 63
+      },
+      {
+        "endpoint": "/api/admin/chef-performance/${selectedChefId}",
+        "line": 78
+      }
+    ]
+  },
+  {
+    "source": "client/src/pages/admin/DeliveryAreasManagement.tsx",
+    "endpoints": [
+      {
+        "endpoint": "/api/admin/default-coordinates",
+        "line": 45
+      },
+      {
+        "endpoint": "/api/admin/delivery-areas",
+        "line": 62
+      }
+    ]
+  }
+]

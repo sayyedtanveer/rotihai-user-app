@@ -1,0 +1,5 @@
+Checking guest checkout reaches read-only order submission without phone entry or OTP.
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+Captured interaction GuestCheckoutSavedContact
+Captured interaction GuestCheckoutOrderSubmission
+PASS saved-number guest checkout reached POST /api/orders without phone entry/OTP. Review transport blocked the write; no live order, account, SMS or payment was created.

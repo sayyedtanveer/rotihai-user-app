@@ -1,0 +1,110 @@
+[
+  {
+    "id": "0c2b5d4a-1262-47ff-80df-3a82a09688bb",
+    "startTime": "09:00",
+    "endTime": "11:00",
+    "label": "9:00 AM - 11:00 AM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 11,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:15:57.398Z",
+    "updatedAt": "2026-03-09T11:15:57.398Z"
+  },
+  {
+    "id": "340ebaeb-21b4-4329-976b-343bbbd0e340",
+    "startTime": "11:00",
+    "endTime": "13:00",
+    "label": "11:00 AM - 1:00 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 10,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:18:32.420Z",
+    "updatedAt": "2026-03-09T11:18:32.420Z"
+  },
+  {
+    "id": "51b6df56-f305-40e3-b50f-c213d40c0c01",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "label": "1:00 PM - 2:00 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 0,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:21:00.251Z",
+    "updatedAt": "2026-03-09T11:21:00.251Z"
+  },
+  {
+    "id": "52ced46b-13ef-4aa6-a443-7145f7104d0d",
+    "startTime": "14:00",
+    "endTime": "15:00",
+    "label": "2:00 PM - 3:00 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 0,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:25:56.751Z",
+    "updatedAt": "2026-03-09T11:25:56.751Z"
+  },
+  {
+    "id": "98736e7e-bb25-4403-b311-99f8bb6682be",
+    "startTime": "15:00",
+    "endTime": "16:00",
+    "label": "3:00 PM - 4:00 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 0,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:30:42.827Z",
+    "updatedAt": "2026-03-09T11:30:42.827Z"
+  },
+  {
+    "id": "09b10ab3-d2d0-4c08-9d53-f6caedddec77",
+    "startTime": "17:00",
+    "endTime": "18:00",
+    "label": "5:00 PM - 6:00 PM",
+    "capacity": 50,
+    "currentOrders": 0,
+    "cutoffHoursBefore": null,
+    "isActive": true,
+    "createdAt": "2026-05-16T08:49:54.074Z",
+    "updatedAt": "2026-05-16T08:49:54.074Z"
+  },
+  {
+    "id": "2cb31d9f-80d8-44ea-b84c-29687c645e0b",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "label": "8:00 PM - 9:00 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 0,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:33:15.362Z",
+    "updatedAt": "2026-03-09T11:33:15.362Z"
+  },
+  {
+    "id": "a047b64a-d3cd-4783-930e-be2dcc475381",
+    "startTime": "21:00",
+    "endTime": "22:00",
+    "label": "9:00 PM - 10:00 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 0,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:34:50.681Z",
+    "updatedAt": "2026-03-09T11:34:50.681Z"
+  },
+  {
+    "id": "ec0850d0-a0cb-4dac-a851-35295db2c934",
+    "startTime": "21:30",
+    "endTime": "22:30",
+    "label": "9:30 PM - 10:30 PM",
+    "capacity": 100,
+    "currentOrders": 0,
+    "cutoffHoursBefore": 0,
+    "isActive": true,
+    "createdAt": "2026-03-09T11:35:54.692Z",
+    "updatedAt": "2026-03-09T11:35:54.692Z"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "id": "9d532beb-cc6b-46af-8c66-a8ebb90a79bc",
+  "merchantPhone": "9773765103",
+  "merchantName": "RotiHai",
+  "upiId": "sayyedtanveer1410-1@oksbi",
+  "supportPhone": "918169020290",
+  "platformFeeEnabled": true,
+  "platformFeeBelow100": 10,
+  "platformFeeBelow200": 0,
+  "platformFeeAbove200": 0,
+  "enableRoadDistanceMultiplier": true,
+  "roadDistanceMultiplier": "1.50",
+  "createdAt": "2026-04-10T16:35:06.484Z",
+  "updatedAt": "2026-10-21T10:22:19.585Z"
+}

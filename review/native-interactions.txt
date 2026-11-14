@@ -1,0 +1,11 @@
+Captured interaction MenuSections
+Captured interaction MenuComboSelected
+PASS Android Back dismisses menu sheet
+Captured interaction HomeMealsInactive
+PASS category retains inactive kitchen with availability status
+Captured interaction NoKitchensState
+Captured interaction OfflineState
+Captured interaction LoadingState
+ERROR: null root node returned by UiTestAutomationBridge.
+Captured interaction CheckoutBill
+Captured interaction MenuDishes

@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "name": "Home",
+      "url": "https://rotihai-main-bcht.onrender.com/",
+      "fixture": true
+    },
+    {
+      "name": "Kitchens",
+      "url": "https://rotihai-main-bcht.onrender.com/",
+      "fixture": true
+    },
+    {
+      "name": "Catalog",
+      "url": "https://rotihai-main-bcht.onrender.com/",
+      "fixture": true
+    },
+    {
+      "name": "Cart",
+      "url": "https://rotihai-main-bcht.onrender.com/",
+      "fixture": true
+    },
+    {
+      "name": "Orders",
+      "url": "https://rotihai-main-bcht.onrender.com/my-orders",
+      "fixture": true
+    },
+    {
+      "name": "Profile",
+      "url": "https://rotihai-main-bcht.onrender.com/profile",
+      "fixture": true
+    },
+    {
+      "name": "Subscriptions",
+      "url": "https://rotihai-main-bcht.onrender.com/my-subscriptions",
+      "fixture": true
+    },
+    {
+      "name": "CustomSubscription",
+      "url": "https://rotihai-main-bcht.onrender.com/custom-subscription",
+      "fixture": true
+    },
+    {
+      "name": "Referrals",
+      "url": "https://rotihai-main-bcht.onrender.com/invite",
+      "fixture": true
+    },
+    {
+      "name": "Privacy",
+      "url": "https://rotihai-main-bcht.onrender.com/privacy-policy",
+      "fixture": true
+    },
+    {
+      "name": "OrderDetails",
+      "url": "https://rotihai-main-bcht.onrender.com/track/UI-REVIEW-ORDER",
+      "fixture": true
+    }
+  ],
+  "blockedMutations": [
+    "POST /api/track-visitor",
+    "POST /api/track-visitor",
+    "POST /api/track-visitor",
+    "POST /api/track-visitor",
+    "POST /api/track-visitor",
+    "POST /api/track-visitor",
+    "POST /api/track-visitor",
+    "POST /api/track-visitor"
+  ]
+}

@@ -1,0 +1,65 @@
+env: load .env
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_WEB_BASE_URL
+Starting project at C:\Users\sayye\source\repos\rotihai-user
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+
+Waiting on http://localhost:8092
+
+Logs for your project will appear below.
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:75864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 4210ms index.ts (1399 modules)
+ WARN  ImageBackground is deprecated and will be removed in a future release. Use a View with an absolutely positioned Image instead. See https://reactnative.dev/docs/imagebackground
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+Android Bundled 724ms index.ts (1 module)
+Android Bundled 275ms index.ts (1 module)
+ WARN  ImageBackground is deprecated and will be removed in a future release. Use a View with an absolutely positioned Image instead. See https://reactnative.dev/docs/imagebackground
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.
+ WARN  ".5" is not a valid number or percentage string.

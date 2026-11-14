@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cc653c85-6ed2-4a4b-bd84-ed2ab91f2b76",
+    "name": "Kurla West",
+    "minDistance": "0.00",
+    "maxDistance": "0.60",
+    "price": 20,
+    "minOrderAmount": 130,
+    "pincode": null,
+    "isActive": true,
+    "createdAt": "2026-05-14T14:43:36.520Z",
+    "updatedAt": "2026-10-14T18:03:08.021Z"
+  },
+  {
+    "id": "488d7798-b1ad-4e84-9d84-49f6693ae72b",
+    "name": "Kurla West",
+    "minDistance": "0.60",
+    "maxDistance": "1.00",
+    "price": 30,
+    "minOrderAmount": 130,
+    "pincode": null,
+    "isActive": true,
+    "createdAt": "2026-05-14T14:44:25.098Z",
+    "updatedAt": "2026-10-14T18:03:48.889Z"
+  },
+  {
+    "id": "265902e3-363d-4134-825f-2aec73556b5c",
+    "name": "Kural West",
+    "minDistance": "1.00",
+    "maxDistance": "1.50",
+    "price": 35,
+    "minOrderAmount": 130,
+    "pincode": null,
+    "isActive": true,
+    "createdAt": "2026-10-01T12:01:27.125Z",
+    "updatedAt": "2026-10-14T18:04:38.378Z"
+  },
+  {
+    "id": "681f968f-e6ab-40e5-a82d-d9b0288ad3aa",
+    "name": "Kurla West",
+    "minDistance": "1.50",
+    "maxDistance": "2.00",
+    "price": 40,
+    "minOrderAmount": 130,
+    "pincode": null,
+    "isActive": true,
+    "createdAt": "2026-03-31T11:00:14.611Z",
+    "updatedAt": "2026-10-14T18:05:13.056Z"
+  },
+  {
+    "id": "af305af0-e3c8-48f7-91bc-dcc1059f9820",
+    "name": "kurla west",
+    "minDistance": "2.00",
+    "maxDistance": "2.50",
+    "price": 50,
+    "minOrderAmount": 200,
+    "pincode": null,
+    "isActive": true,
+    "createdAt": "2026-10-14T18:07:51.098Z",
+    "updatedAt": "2026-10-14T18:08:07.842Z"
+  }
+]

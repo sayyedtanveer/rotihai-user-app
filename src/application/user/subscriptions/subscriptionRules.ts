@@ -1,0 +1,9 @@
+import type {Category,CustomRequest,Plan,Subscription} from '../../../core/api/models';
+import type {SubscriptionCreationAttempt} from '../../../core/storage/pendingPayment';
+export function planRequiresSlot(plan:Plan|undefined,categories:Category[]=[]){const category=categories.find(c=>c.id===plan?.categoryId);return !!category&&(!!category.requiresDeliverySlot||category.name.toLowerCase().includes('roti'));}
+export function activeCustomRequest(requests:CustomRequest[]=[]){return requests.find(r=>['pending_chef_assignment','approved','awaiting_payment','paid'].includes(r.status));}
+export function customStatusLabel(status:string){return ({pending_chef_assignment:'Awaiting kitchen assignment',approved:'Approved',awaiting_payment:'Awaiting payment',paid:'Payment submitted · awaiting activation',converted:'Subscription active',rejected:'Request declined'} as Record<string,string>)[status]||status.replace(/_/g,' ');}
+export function customPlanEstimate(count:number,duration:string,price:number){if(!Number.isInteger(count)||count<1||!['weekly','monthly'].includes(duration)||!Number.isInteger(price)||price<=0)throw new Error('Choose a valid quantity and load the current price.');return count*(duration==='weekly'?7:30)*price;}
+const recent=(createdAt:string|undefined,attempt:SubscriptionCreationAttempt)=>!!createdAt&&Date.parse(createdAt)>=Date.parse(attempt.createdAt)-30000;
+export function matchingCreatedPlans(attempt:SubscriptionCreationAttempt,records:Subscription[]){return records.filter(s=>s.id!==attempt.originalId&&s.planId===attempt.planId&&recent(s.createdAt,attempt));}
+export function matchingCreatedRequests(attempt:SubscriptionCreationAttempt,records:CustomRequest[]){return records.filter(r=>r.rotiPerDay===attempt.rotiPerDay&&r.duration===attempt.duration&&r.deliverySlotId===attempt.deliverySlotId&&recent(r.createdAt,attempt));}

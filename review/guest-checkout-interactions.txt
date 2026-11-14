@@ -1,0 +1,3 @@
+Checking guest basket → address → checkout
+ERROR: null root node returned by UiTestAutomationBridge.
+Android accessibility hierarchy is not ready

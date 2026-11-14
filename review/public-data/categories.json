@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ce4cbd16-a9ef-4e8b-94fa-9cf1548062b8",
+    "name": "Home Meals",
+    "description": "Daily meals, thalis, homemade rotis, dal and sabzi",
+    "image": "https://res.cloudinary.com/dqe8f3req/image/upload/v1772802980/rotihai/y5mpx4vqzlltnd66yryf.jpg",
+    "iconName": "UtensilsCrossed",
+    "itemCount": "0 items",
+    "requiresDeliverySlot": true,
+    "displayOrder": 1
+  },
+  {
+    "id": "fda04724-94e7-4d11-be60-8e9fcba66009",
+    "name": "Frozen Food",
+    "description": "Frozen parathas, snacks, kebabs and other frozen products",
+    "image": "https://res.cloudinary.com/dqe8f3req/image/upload/v1792573229/rotihai/fm6q2pwqlsh7agzkwdnj.jpg",
+    "iconName": "UtensilsCrossed",
+    "itemCount": "0 items",
+    "requiresDeliverySlot": true,
+    "displayOrder": 2
+  },
+  {
+    "id": "ffdd047f-992b-43c7-bf55-f0d9dea4e0f1",
+    "name": "Quick Bites",
+    "description": "Fast, tasty snacks for instant cravings.",
+    "image": "https://res.cloudinary.com/dqe8f3req/image/upload/v1774004012/rotihai/zfhy8bfa8zwy732lgyad.jpg",
+    "iconName": "UtensilsCrossed",
+    "itemCount": "0 items",
+    "requiresDeliverySlot": false,
+    "displayOrder": 3
+  },
+  {
+    "id": "e7c9a92f-a9ee-4566-953b-92fbdde8e9d4",
+    "name": "Restaurants",
+    "description": "Restaurants, eateries, cafés and hotels serving prepared meals.",
+    "image": "https://res.cloudinary.com/dqe8f3req/image/upload/v1791892218/rotihai/u9vhkx7ggyuflrennjwk.jpg",
+    "iconName": "UtensilsCrossed",
+    "itemCount": "0 items",
+    "requiresDeliverySlot": false,
+    "displayOrder": 4
+  },
+  {
+    "id": "e32eb25b-6b0f-4fa2-bcd3-f939ec4c4856",
+    "name": "Sweets & Desserts",
+    "description": "Sweets, Cakes, Pastries, Brownies, Ice Cream, Other Desserts",
+    "image": "https://res.cloudinary.com/dqe8f3req/image/upload/v1792759534/rotihai/xkpfo1opddxhuxudexa6.jpg",
+    "iconName": "UtensilsCrossed",
+    "itemCount": "0 items",
+    "requiresDeliverySlot": false,
+    "displayOrder": 5
+  },
+  {
+    "id": "d1f9f74e-d4d5-469d-b2f8-9e1c63fae0cc",
+    "name": "Bulk Orders (Catering)",
+    "description": "Bhati Yara Style",
+    "image": "https://res.cloudinary.com/dqe8f3req/image/upload/v1774008189/rotihai/zxbjbdvabgif62ytdhzi.jpg",
+    "iconName": "UtensilsCrossed",
+    "itemCount": "0 items",
+    "requiresDeliverySlot": false,
+    "displayOrder": 6
+  },
+  {
+    "id": "8724037e-ece5-4cb9-a2f0-810a728067d7",
+    "name": "Custom Subscriptions",
+    "description": "System category for custom user plans",
+    "image": "",
+    "iconName": "Star",
+    "itemCount": "0",
+    "requiresDeliverySlot": false,
+    "displayOrder": 7
+  }
+]

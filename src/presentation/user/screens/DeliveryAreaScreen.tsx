@@ -1,0 +1,12 @@
+import React, { useState } from 'react';
+import { Image, Text, View } from 'react-native';
+import { useDeliveryArea, detectDeliveryArea, validatePincode } from '../../../core/location/DeliveryAreaProvider';
+import type { DeliveryArea } from '../../../core/location/discoveryRules';
+import { Page, Title, Body, Heading, Field, Button, Card, ErrorView } from '../components/UI';
+import { Brand, food } from '../components/BrandUI';
+export function DeliveryAreaScreen({ navigation }: { navigation?: { goBack: () => void } }) {
+  const delivery = useDeliveryArea();
+  const [pincode, setPincode] = useState(''), [candidate, setCandidate] = useState<DeliveryArea | null>(null), [busy, setBusy] = useState(false), [error, setError] = useState<string | null>(null);
+  const run = async (fn: () => Promise<void>) => { if (busy) return; setBusy(true); setError(null); try { await fn(); } catch (e) { setError((e as Error).message); } finally { setBusy(false); } };
+  return <Page><Brand /><Image source={food.hero} style={{ height: 210, width: '100%', borderRadius: 24 }} /><Title>Good food starts close to home.</Title><Body>Choose your delivery area to discover nearby kitchens and freshly made meals.</Body><Button title={busy ? 'Finding your area…' : 'Use current location'} disabled={busy} onPress={() => void run(async () => { const area = await detectDeliveryArea(); setPincode(area.pincode); setCandidate(area); })} /><Body muted>Location is used only when you choose this option. You can always enter a pincode instead.</Body><Field label="Delivery pincode" placeholder="6-digit pincode" keyboardType="number-pad" maxLength={6} value={pincode} onChangeText={v => { setPincode(v.replace(/\D/g, '')); setCandidate(null); }} /><Button secondary title="Find my area" disabled={busy || !/^\d{6}$/.test(pincode)} onPress={() => void run(async () => setCandidate(await validatePincode(pincode)))} /><ErrorView error={error || delivery.error} />{candidate && <Card><Heading>{candidate.area} · {candidate.pincode}</Heading><Body muted>{[candidate.city, candidate.state, candidate.country].filter(Boolean).join(', ')}</Body><Body>Check this area and pincode before continuing. Your full address is confirmed at checkout.</Body><Button title="Confirm delivery area" disabled={busy} onPress={() => void run(async () => { await delivery.select(candidate); navigation?.goBack(); })} /></Card>}{delivery.area && navigation && <Button secondary title="Keep current area" disabled={busy} onPress={() => navigation.goBack()} />}</Page>;
+}

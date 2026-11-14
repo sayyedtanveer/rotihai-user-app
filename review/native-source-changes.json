@@ -1,0 +1,130 @@
+[
+  {
+    "path": "android/app/src/main/AndroidManifest.xml",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_background.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_monochrome.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_background.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_monochrome.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_monochrome.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_monochrome.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_monochrome.webp",
+    "state": "missing"
+  },
+  {
+    "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/values/colors.xml",
+    "state": "changed"
+  },
+  {
+    "path": "android/app/src/main/res/values/strings.xml",
+    "state": "changed"
+  },
+  {
+    "path": "android/settings.gradle",
+    "state": "changed"
+  },
+  {
+    "path": "android/gradle/wrapper/gradle-wrapper.properties",
+    "state": "changed"
+  }
+]
