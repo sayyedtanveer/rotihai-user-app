@@ -1,23 +1,20 @@
+import {deliveryAreaSelection} from '../../../core/storage/deliveryAreaSelection';
 import {useQueryClient} from '@tanstack/react-query';
 import {useReducedMotion} from '../hooks/useReducedMotion';
 import {migrateGuestCheckout,migrateGuestSubscription} from '../../../core/storage/checkoutState';
 import {provisionalContact} from '../../../core/storage/provisionalContact';
-import {initialCustomerStep,normalizeProvisionalPhone,verificationContact,recognizeCustomer,databaseCustomerSession} from '../../../application/user/auth/entryRules';
+import {customerEntryScreen,normalizeProvisionalPhone,verificationContact,recognizeCustomer,databaseCustomerSession} from '../../../application/user/auth/entryRules';
 import {useDeliveryArea} from '../../../core/location/DeliveryAreaProvider';
 import {DeliveryAreaScreen} from '../screens/DeliveryAreaScreen';
-import {validArea} from '../../../core/location/discoveryRules';
-import {readAddress} from '../../../application/user/cart/cartRules';
 import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
 import { StartupSplash } from '../screens/StartupSplash';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Animated, BackHandler, Linking, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
-import { LaunchScreen, PhoneScreen, OtpScreen, NameScreen, LocationScreen } from '../screens/OnboardingScreens';
-import { ConfirmAddressScreen } from '../screens/ConfirmAddressScreen';
+import { LaunchScreen, PhoneScreen, OtpScreen, NameScreen } from '../screens/OnboardingScreens';
 import { CustomerNavigator } from './CustomerNavigator';
 import { ApiError, customerApi, type Customer, type Session } from '../../../core/api/customerApi';
 import { customerSession } from '../../../core/storage/customerSession';
-import { currentDeliveryLocation, searchDeliveryAddress, type DeliveryAddress } from '../../../core/location/customerLocation';
 
 type Step = 'restore' | 'launch' | 'phone' | 'otp' | 'name' | 'location' | 'search' | 'confirm' | 'home';
 export function UserAppNavigator() {
@@ -38,19 +35,29 @@ export function UserAppNavigator() {
   const [resendAt, setResendAt] = useState(0);
   const sentPhone=useRef('');
   const [now, setNow] = useState(Date.now());
-  const [query, setQuery] = useState('');
-  const [address, setAddress] = useState<DeliveryAddress | null>(null);
 
   useEffect(() => {
     if(!showSplash||step==='restore'||!delivery.ready||reducedMotion===null)return;
     const timer=setTimeout(()=>{Animated.timing(splashOpacity,{toValue:0,duration:reducedMotion?0:800,useNativeDriver:true}).start(({finished})=>{if(finished)setShowSplash(false);});},reducedMotion?0:Math.max(0,2500-(Date.now()-splashStarted.current)));
     return()=>{clearTimeout(timer);splashOpacity.stopAnimation();};
   }, [showSplash,step,delivery.ready,reducedMotion,splashOpacity]);
-  const logout = useCallback(() => { 
-
-    void queryClient.cancelQueries({queryKey:['customer']}).then(()=>{queryClient.removeQueries({queryKey:['customer']});return customerSession.clear();}).catch(()=>setError('Could not fully clear saved sign-in. Please restart and sign out again before sharing this device.'));
-    setToken('');setPhone('');setEntryOnly(true);setAddress(null);setDestination(undefined);setStep('phone'); 
-  }, [queryClient]);
+  const loggingOut=useRef(false);
+  const logout = useCallback(() => {
+    if(loggingOut.current)return;
+    loggingOut.current=true;
+    // Unmount private screens immediately; restart only after saved identity/area cleanup.
+    setToken('');setPhone('');setEntryOnly(true);setDestination(undefined);setError(null);setStep('restore');
+    delivery.reset();sentPhone.current='';setResendAt(0);
+    splashStarted.current=Date.now();splashOpacity.setValue(1);setShowSplash(true);
+    void (async()=>{
+      try{
+        await queryClient.cancelQueries({queryKey:['customer']});
+        queryClient.removeQueries({queryKey:['customer']});
+        await customerSession.clear();
+      }catch{setError('Could not fully clear saved sign-in. Please restart and sign out again before sharing this device.');}
+      finally{loggingOut.current=false;setStep('phone');}
+    })();
+  }, [queryClient,delivery.reset,splashOpacity]);
   const go = (next: Step) => { 
 
     setError(null); 
@@ -75,7 +82,7 @@ export function UserAppNavigator() {
         const [saved,contact] = await Promise.all([customerSession.read(),provisionalContact.read()]);
         if(contact&&!cancelled)setPhone(contact);
 
-        if (!saved) { if (!cancelled) { if(contact){await signInMvp(contact,await provisionalContact.readName());}else{setEntryOnly(true);setStep('phone');} } return; }
+        if (!saved) { if (!cancelled) { if(contact){await signInMvp(contact,await provisionalContact.readName());}else{delivery.reset();await deliveryAreaSelection.clear();if(!cancelled){setEntryOnly(true);setStep('phone');}} } return; }
         if(!cancelled)setToken(saved);
         
         let user: Customer;
@@ -87,13 +94,12 @@ export function UserAppNavigator() {
         if (cancelled) return;
         setToken(saved);
         try{const restoredPhone=normalizeProvisionalPhone(user.phone);setPhone(restoredPhone);void provisionalContact.save(restoredPhone).catch(()=>{});}catch{}
-        const savedAddress=readAddress(user);
-        if(!delivery.area && savedAddress && validArea(savedAddress)) await delivery.select({...savedAddress,source:'address'});
+        // Home delivery selection is restored only after admin pincode validation.
         const nextStep = 'home';
 
         setStep(nextStep);
       } catch (e) {
-        if (e instanceof ApiError && e.status === 401) { await customerSession.clear(); setToken(''); }
+        if (e instanceof ApiError && e.status === 401) { delivery.reset();setToken('');setPhone('');await customerSession.clear(); }
         if (!cancelled) { setEntryOnly(true);setStep('phone');setError('Could not restore your account. Check your connection and continue with your mobile number.'); }
       }
     })();
@@ -133,7 +139,9 @@ export function UserAppNavigator() {
     setPhone(normalized);setToken(session.accessToken);setEntryOnly(false);go('home');
   };
   const renderContent = () => {
-    if (step === 'restore' || !delivery.ready) return null;
+    const entryScreen=customerEntryScreen(step,delivery.ready,!!delivery.area);
+    if(entryScreen==='restore')return null;
+    if(entryScreen==='location')return <DeliveryAreaScreen onboarding={step!=='home'} navigation={{goBack:()=>go(step==='home'?'home':'phone')}}/>;
 
     if (step === 'launch') return <LaunchScreen onContinue={() => go('phone')} />;
     if (step === 'phone') return <PhoneScreen provisional={entryOnly} initialPhone={phone} busy={busy} error={error} onSubmit={entryOnly ? (value,name)=>void run(async()=>{const result=await recognizeCustomer(value,phone=>customerApi<{exists:boolean}>('/api/user/check-phone',{phone}));const saved=await provisionalContact.save(result.phone,name);setPhone(saved);if(!result.exists&&!name?.trim()){go('name');return;}await signInMvp(saved,name);}) : send} onPrivacy={() => {
@@ -164,28 +172,8 @@ export function UserAppNavigator() {
       if(entryOnly){await signInMvp(phone,name);return;}else await customerApi('/api/user/profile', { name }, token, 'PUT');
       go('home');
     })} />;
-    if (step === 'location') return <LocationScreen busy={busy} error={error} onChooseAddress={() => go('search')}
-      onUseCurrentLocation={() => run(async () => { 
-          setAddress(await currentDeliveryLocation()); 
-        go('confirm'); 
-      })} />;
-    if (step === 'search') return <View style={{ flex: 1, padding: 24, paddingTop: 80, gap: 20 }}>
-      <Text style={{ fontSize: 26, fontWeight: '700' }}>Find your delivery address</Text>
-      <TextInput accessibilityLabel="Full delivery address" placeholder="Street, area, city, pincode" value={query} onChangeText={setQuery} editable={!busy} style={{ borderWidth: 1, padding: 16, borderRadius: 12 }} />
-      {!!error && <Text accessibilityRole="alert">{error}</Text>}
-      {busy && <ActivityIndicator />}
-      <Pressable accessibilityRole="button" disabled={busy || query.trim().length < 10} onPress={() => run(async () => { 
-          setAddress(await searchDeliveryAddress(query.trim())); 
-        go('confirm'); 
-      })}><Text>Find address</Text></Pressable>
-      <Pressable accessibilityRole="button" disabled={busy} onPress={() => go('location')}><Text>Back</Text></Pressable>
-    </View>;
-    if (step === 'confirm' && address) return <ConfirmAddressScreen initial={address} busy={busy} error={error} onBack={() => go('location')}
-      onSave={selected => run(async () => {
-          await customerApi('/api/user/profile', { latitude: selected.latitude, longitude: selected.longitude,
-            defaultDeliveryAddress: selected }, token, 'PUT');
-        setAddress(selected); go('home');
-      })} />;
+    if (['location','search','confirm'].includes(step)) return <DeliveryAreaScreen navigation={{goBack:()=>go('home')}}/>;
+    if(!delivery.area)return <DeliveryAreaScreen navigation={{goBack:()=>go('home')}}/>;
     return <CustomerNavigator token={token} onLogout={logout} destination={destination} onLogin={beginVerification} />;
   };
 

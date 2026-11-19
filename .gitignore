@@ -27,3 +27,7 @@ review/native/*.pem
 
 # Isolated checkout emulator runtime
 review/checkout-avds/
+
+# Native push service configuration
+google-services.json
+GoogleService-Info.plist

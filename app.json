@@ -7,7 +7,8 @@
     "icon": "./assets/rotihai-icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.rotihaiuser"
     },
     "android": {
       "adaptiveIcon": {
@@ -46,7 +47,15 @@
       ],
       "expo-font",
       "./plugins/withPaymentQueries.cjs",
-      "./plugins/withWindowsCmakePaths.cjs"
+      "./plugins/withWindowsCmakePaths.cjs",
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow RotiHai to hear your craving when you tap Craving Buddy.",
+          "speechRecognitionPermission": "Allow RotiHai to turn your craving into text."
+        }
+      ],
+      "expo-dev-client"
     ]
   }
 }

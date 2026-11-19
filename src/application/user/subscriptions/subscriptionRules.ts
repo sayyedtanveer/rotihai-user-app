@@ -7,3 +7,19 @@ export function customPlanEstimate(count:number,duration:string,price:number){if
 const recent=(createdAt:string|undefined,attempt:SubscriptionCreationAttempt)=>!!createdAt&&Date.parse(createdAt)>=Date.parse(attempt.createdAt)-30000;
 export function matchingCreatedPlans(attempt:SubscriptionCreationAttempt,records:Subscription[]){return records.filter(s=>s.id!==attempt.originalId&&s.planId===attempt.planId&&recent(s.createdAt,attempt));}
 export function matchingCreatedRequests(attempt:SubscriptionCreationAttempt,records:CustomRequest[]){return records.filter(r=>r.rotiPerDay===attempt.rotiPerDay&&r.duration===attempt.duration&&r.deliverySlotId===attempt.deliverySlotId&&recent(r.createdAt,attempt));}
+
+// Only wrap the creation POST: errors in later storage/navigation must retain recovery.
+// These HTTP responses reject creation; timeouts, 5xx and malformed 2xx remain uncertain.
+export async function submitSubscriptionRequest<T>(send:()=>Promise<T>,clearRejected:()=>Promise<void>):Promise<T>{
+ try{return await send();}catch(error){
+  const status=(error as {status?:number})?.status;
+  if(status!==undefined&&[400,401,403,404,409,422,429].includes(status))await clearRejected();
+  throw error;
+ }
+}
+export function subscriptionPayable(subscription:Subscription){
+ const raw=subscription.finalAmount??subscription.totalAmount??subscription.price;
+ const amount=Number(raw);
+ if(raw==null||raw===''||!Number.isFinite(amount)||amount<=0)throw new Error('The subscription was received, but its payable amount is unavailable. Review your subscription before paying.');
+ return amount;
+}

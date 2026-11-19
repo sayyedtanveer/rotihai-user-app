@@ -1,0 +1,37 @@
+✔ mode matrix: chef instant, product inherit, category offers slots (7.1476ms)
+✔ mode matrix: chef instant, product instant, category offers slots (3.2783ms)
+✔ mode matrix: chef instant, product preorder, category offers slots (3.2837ms)
+✔ mode matrix: chef preorder, product inherit, category offers slots (5.5644ms)
+✔ mode matrix: chef preorder, product instant, category offers slots (5.0088ms)
+✔ mode matrix: chef preorder, product preorder, category offers slots (3.6049ms)
+✔ mode matrix: chef both, product inherit, category offers slots (3.8367ms)
+✔ mode matrix: chef both, product instant, category offers slots (2.8938ms)
+✔ mode matrix: chef both, product preorder, category offers slots (6.6708ms)
+✔ basket matrix: instant + instant (1.4948ms)
+✔ basket matrix: instant + preorder (0.7115ms)
+✔ basket matrix: instant + both (0.1957ms)
+✔ basket matrix: preorder + instant (0.1556ms)
+✔ basket matrix: preorder + preorder (0.1018ms)
+✔ basket matrix: preorder + both (0.0838ms)
+✔ basket matrix: both + instant (0.0807ms)
+✔ basket matrix: both + preorder (0.0686ms)
+✔ basket matrix: both + both (0.0795ms)
+✔ different chefs/categories retain separate instant/preorder checkouts (0.2845ms)
+✔ closed active chef allows preorder and flexible items in a preorder basket, never instant or inactive orders (0.3304ms)
+✔ fresh chef mode changes block the old basket while an explicit product override stays valid (0.4447ms)
+✔ chef slot matrix: Lunch false, Dinner false (142.1955ms)
+✔ chef slot matrix: Lunch false, Dinner true (51.0793ms)
+✔ chef slot matrix: Lunch true, Dinner false (45.8416ms)
+✔ chef slot matrix: Lunch true, Dinner true (43.2972ms)
+✔ missing chef settings preserve the web legacy defaults; unavailable chef data never invents choices (28.6547ms)
+✔ selected chef disabled meals, expired times and dates beyond Tomorrow cannot submit (1.7121ms)
+✔ chef-specific meal settings do not carry across kitchens, and Tomorrow stays available before the opening-hour setting (0.8117ms)
+✔ refresh/reorder preserves a valid closed-chef preorder plus flexible dish and rejects a mixed-only basket (0.8341ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5107.6956

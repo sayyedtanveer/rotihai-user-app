@@ -1,0 +1,115 @@
+PreorderLunchChef false UI REVIEW · SAMPLE ACCOUNT · NO LIVE WRITES · PreorderLunchChef
+Review order
+DELIVER TO
+Sample Flat 12, Review House
+Using your saved location · change to review its pin
+Change
+Sample Road, Kurla West, Mumbai, 400070
++91 9000000000
+YOUR ORDER
+Rotihai Partner Chef
+Edit
+Tandoori Roti (Maida)
+× 1
+₹12
+Add delivery instructions or email
+MADE FRESH, ON YOUR TIME
+When should we deliver?
+PREORDER
+Choose your delivery day
+Today
+19 Nov
+Tomorrow
+20 Nov
+Your meal time
+Lunch
+11:00 AM – 4:00 PM
+Available
+Your selected chef’s delivery time will be checked before placing the order.
+Your kitchen checks availability and confirms late preorder requests.
+%
+Apply a coupon
+Use your available offer code
+Use wallet credit
+Wallet balance ₹50 · Maximum ₹10 per order
+You can use ₹10 on this order. Minimum order ₹0.
+Bill details
+ROTIHAI
+Item total
+₹12
+Delivery fee · ~1.80 km
+₹20
+Convenience fee
+WAIVED
+Estimated kitchen-to-address distance used for delivery pricing.
+TOTAL TO PAY
+1 items · delivery included
+₹32
+Please check your items and delivery address before placing your order.
+UPI
+GPay, UPI apps or QR
+₹32
+TOTAL TO PAY
+Place order
+PASS 375px PreorderLunchChef: correct chef meal only, explicit selection required, closed active chef preorder reaches protected submission.
+PreorderDinnerChef true UI REVIEW · SAMPLE ACCOUNT · NO LIVE WRITES · PreorderDinnerChef
+Review order
+DELIVER TO
+Sample Flat 12, Review House
+Using your saved location · change to review its pin
+Change
+Sample Road, Kurla West, Mumbai, 400070
++91 9000000000
+YOUR ORDER
+Franky Adda
+Edit
+Aloo Schezwan Frankie
+× 1
+₹65
+Add delivery instructions or email
+MADE FRESH, ON YOUR TIME
+When should we deliver?
+PREORDER
+Choose your delivery day
+Today
+19 Nov
+Tomorrow
+20 Nov
+Your meal time
+Dinner
+6:00 PM – 10:00 PM
+Available
+Your selected chef’s delivery time will be checked before placing the order.
+Your kitchen checks availability and confirms late preorder requests.
+%
+Apply a coupon
+Use your available offer code
+Use wallet credit
+Wallet balance ₹50 · Maximum ₹10 per order
+You can use ₹10 on this order. Minimum order ₹0.
+Bill details
+ROTIHAI
+Item total
+₹65
+Delivery fee · ~1.80 km
+₹20
+Convenience fee
+WAIVED
+Estimated kitchen-to-address distance used for delivery pricing.
+TOTAL TO PAY
+1 items · delivery included
+₹85
+Check your previous request
+Your basket is saved. Confirm the earlier request before placing another order.
+Check order status
+Please check your items and delivery address before placing your order.
+UPI
+GPay, UPI apps or QR
+₹85
+TOTAL TO PAY
+Place order
+page.waitForFunction: Timeout 30000ms exceeded.
+    at C:\Users\sayye\source\repos\rotihai-user\review\fulfillment-browser.cjs:20:234 {
+  log: [],
+  name: 'TimeoutError'
+}

@@ -7,6 +7,7 @@ export function ConfirmAddressScreen({ initial, busy, error, onSave, onBack }: {
   initial: DeliveryAddress; busy: boolean; error: string | null;
   onSave: (address: DeliveryAddress) => void; onBack: () => void;
 }) {
+  const [ready,setReady]=useState(false),[mapVersion,setMapVersion]=useState(0);
   const [pin, setPin] = useState({ latitude: initial.latitude, longitude: initial.longitude });
   const [street, setStreet] = useState(initial.street || '');
   const [area, setArea] = useState(initial.area || '');
@@ -18,7 +19,8 @@ export function ConfirmAddressScreen({ initial, busy, error, onSave, onBack }: {
     <Text style={s.title}>Confirm delivery address</Text>
     <Text style={s.text}>{initial.address || 'Current GPS location'}</Text>
     <Text style={s.text}>Drag the pin to your entrance, then confirm the address below.</Text>
-    <DeliveryMap coordinate={pin} disabled={busy} onChange={setPin} height={240}/>
+    <DeliveryMap key={mapVersion} onReady={setReady} coordinate={pin} disabled={busy} onChange={setPin} height={240}/>
+    <Pressable accessibilityRole="button" onPress={()=>{setReady(false);setMapVersion(v=>v+1);}}><Text style={s.link}>Reload map</Text></Pressable>
     <TextInput accessibilityLabel="Street" style={s.input} placeholder="Street" value={street} onChangeText={setStreet} editable={!busy} />
     <TextInput accessibilityLabel="Area" style={s.input} placeholder="Area" value={area} onChangeText={setArea} editable={!busy} />
     <TextInput accessibilityLabel="City" style={s.input} placeholder="City" value={city} onChangeText={setCity} editable={!busy} />
@@ -27,7 +29,7 @@ export function ConfirmAddressScreen({ initial, busy, error, onSave, onBack }: {
     <TextInput accessibilityLabel="Pincode" style={s.input} placeholder="6-digit pincode" keyboardType="number-pad" maxLength={6} value={pincode} onChangeText={v => setPincode(v.replace(/\D/g, ''))} editable={!busy} />
     {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
     {busy && <ActivityIndicator />}
-    <Pressable accessibilityRole="button" disabled={busy || !street.trim() || !area.trim() || !city.trim() || !houseNumber.trim() || !/^[0-9]{6}$/.test(pincode)} onPress={() => onSave({ ...initial, ...pin, building: houseNumber.trim(), street: street.trim(), area: area.trim(), city: city.trim(), houseNumber: houseNumber.trim(), landmark: landmark.trim(), pincode })} style={s.button}><Text style={s.buttonText}>Save delivery address</Text></Pressable>
+    <Pressable accessibilityRole="button" disabled={busy || !ready || !street.trim() || !area.trim() || !city.trim() || !houseNumber.trim() || !/^[0-9]{6}$/.test(pincode)} onPress={() => onSave({ ...initial, ...pin, building: houseNumber.trim(), street: street.trim(), area: area.trim(), city: city.trim(), houseNumber: houseNumber.trim(), landmark: landmark.trim(), pincode,locationConfirmed:true,locationSource:'customer_pin',locationPrecision:'customer_selected' })} style={s.button}><Text style={s.buttonText}>Confirm Delivery Location</Text></Pressable>
     <Pressable accessibilityRole="button" disabled={busy} onPress={onBack}><Text style={s.link}>Choose another location</Text></Pressable>
   </ScrollView>;
 }

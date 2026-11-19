@@ -1,0 +1,4 @@
+PASS 375px PreorderLunchChef: correct chef meal only, explicit selection required, closed active chef preorder reaches protected submission.
+PASS 375px PreorderDinnerChef: correct chef meal only, explicit selection required, closed active chef preorder reaches protected submission.
+PASS 390px PreorderLunchChef: correct chef meal only, explicit selection required, closed active chef preorder reaches protected submission.
+PASS 390px PreorderDinnerChef: correct chef meal only, explicit selection required, closed active chef preorder reaches protected submission.

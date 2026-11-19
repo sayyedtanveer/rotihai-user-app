@@ -1,3 +1,4 @@
+import {apiOrigin} from '../api/apiBase';
 import {useEffect,useState} from 'react';
 import * as FileSystem from 'expo-file-system/legacy';
 import {isConnected} from '../api/connectivity';
@@ -14,7 +15,7 @@ async function cachedImage(url:string):Promise<string>{
  }catch{return url;}})();active.set(url,promise);try{return await promise;}finally{active.delete(url);}
 }
 export function useFoodImage(uri?:string|null){
- const base=process.env.EXPO_PUBLIC_API_BASE_URL?.replace(/\/$/,'')||'';
+ const base=apiOrigin(process.env.EXPO_PUBLIC_API_BASE_URL);
  const full=uri?.trim()?(uri.startsWith('http')||uri.startsWith('file:')?uri:base+(uri.startsWith('/')?uri:'/'+uri)):null;
  const [resolved,setResolved]=useState({url:full,source:full});
  useEffect(()=>{let alive=true;setResolved({url:full,source:full});if(full)void cachedImage(full).then(value=>{if(alive)setResolved({url:full,source:value});});return()=>{alive=false;};},[full]);

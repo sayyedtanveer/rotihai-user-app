@@ -1,3 +1,4 @@
+import {deliveryAreaSelection} from './deliveryAreaSelection';
 import {provisionalContact} from './provisionalContact';
 import {pendingPayment} from './pendingPayment';
 import {checkoutAddress} from './checkoutState';
@@ -7,5 +8,5 @@ const KEY = 'rotihai.customer.access-token';
 export const customerSession = {
   read: () => SecureStore.getItemAsync(KEY),
   save: (token: string) => SecureStore.setItemAsync(KEY, token),
-  clear: async () => {await SecureStore.deleteItemAsync(KEY);await Promise.all([forgetCachedProfile(),provisionalContact.clear(),pendingPayment.clear('guest'),checkoutAddress.clear('guest')]);},
+  clear: async () => {await SecureStore.deleteItemAsync(KEY);await Promise.all([deliveryAreaSelection.clear(),forgetCachedProfile(),provisionalContact.clear(),pendingPayment.clear('guest'),checkoutAddress.clear('guest')]);},
 };

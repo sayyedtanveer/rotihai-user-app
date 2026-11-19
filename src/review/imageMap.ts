@@ -1,4 +1,4 @@
-import {Image} from 'react-native';
+import {Image,Platform} from 'react-native';
 const images:Record<string,number>={
 "https://res.cloudinary.com/dqe8f3req/image/upload/v1791892218/rotihai/u9vhkx7ggyuflrennjwk.jpg":require("../../review/images/image-3.jpg"),
 "https://res.cloudinary.com/dqe8f3req/image/upload/v1772802980/rotihai/y5mpx4vqzlltnd66yryf.jpg":require("../../review/images/image-0.jpg"),
@@ -31,4 +31,4 @@ const images:Record<string,number>={
 "https://res.cloudinary.com/dqe8f3req/image/upload/v1792763167/rotihai/xb3exvvgia5uochdwc6u.jpg":require("../../review/images/image-28.jpg"),
 "https://res.cloudinary.com/dqe8f3req/image/upload/v1792758390/rotihai/h7md4vvdhkpkjachc7c1.jpg":require("../../review/images/image-29.jpg")
 };
-export const localReviewImage=(uri:string)=>images[uri]?(Image.resolveAssetSource(images[uri])?.uri||uri):uri;
+export const localReviewImage=(uri:string)=>Platform.OS==='web'?uri:images[uri]?(Image.resolveAssetSource(images[uri])?.uri||uri):uri;

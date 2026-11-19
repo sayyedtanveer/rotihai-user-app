@@ -1,14 +1,19 @@
-import React,{useEffect,useRef,useState} from 'react';
+import React,{useRef,useState,useEffect} from 'react';
 import {StyleSheet,Text,View} from 'react-native';
-import MapView,{Marker,LatLng} from 'react-native-maps';
+import {WebView} from 'react-native-webview';
+import {apiOrigin} from '../../../core/api/apiBase';
+import {validPoint,deliveryMapZoom} from '../../../core/location/addressRules';
 import {theme as t} from '../theme/theme';
-import {Icon} from './BrandUI';
-export function DeliveryMap({coordinate,onChange,disabled=false,height=250}:{coordinate:LatLng;onChange:(point:LatLng)=>void;disabled?:boolean;height?:number}){
- const [loaded,setLoaded]=useState(false),[waited,setWaited]=useState(false),map=useRef<MapView>(null);
- useEffect(()=>{const timer=setTimeout(()=>setWaited(true),12000);return()=>clearTimeout(timer);},[]);
- useEffect(()=>{map.current?.animateToRegion({...coordinate,latitudeDelta:.008,longitudeDelta:.008},0);},[coordinate.latitude,coordinate.longitude]);
- return <View style={{height,borderRadius:17,overflow:'hidden',borderWidth:1,borderColor:t.border}}>
- <MapView ref={map} style={StyleSheet.absoluteFill} initialRegion={{...coordinate,latitudeDelta:.008,longitudeDelta:.008}} onMapLoaded={()=>setLoaded(true)} onPress={e=>{if(!disabled)onChange(e.nativeEvent.coordinate);}}><Marker coordinate={coordinate} draggable={!disabled} onDragEnd={e=>{if(!disabled)onChange(e.nativeEvent.coordinate);}}/></MapView>
- {!loaded&&<View pointerEvents="none" style={[StyleSheet.absoluteFill,{backgroundColor:'#f4efe7f2',alignItems:'center',justifyContent:'center',padding:25,gap:11}]}><Icon name="pin" color={t.primary} size={30}/><Text style={{fontFamily:t.semibold,color:t.ink,fontSize:13,textAlign:'center'}}>{waited?'Map preview is unavailable':'Loading your map preview'}</Text><Text style={{fontFamily:t.font,color:t.muted,fontSize:11,lineHeight:18,textAlign:'center'}}>You can use GPS or search for your address, then check the delivery details below.</Text></View>}
+type Point={latitude:number;longitude:number};
+// Reuses the web app's existing Leaflet / OSM provider. No Google key or GPS permission.
+export function DeliveryMap({coordinate,onChange,disabled=false,height=280,onReady,precision}:{coordinate:Point;onChange:(point:Point)=>void;disabled?:boolean;height?:number;precision?:string;onReady?:(ready:boolean)=>void}){
+ const webview=useRef<WebView<unknown>>(null),lastPoint=useRef(coordinate),initial=useRef(coordinate),[ready,setReady]=useState(false),[failed,setFailed]=useState(false);
+ const origin=apiOrigin(process.env.EXPO_PUBLIC_API_BASE_URL),uri=origin+'/delivery-map.html?v=2#lat='+initial.current.latitude+'&lon='+initial.current.longitude+'&zoom='+deliveryMapZoom(precision);
+ useEffect(()=>{if(ready)return;const timer=setTimeout(()=>{setFailed(true);onReady?.(false);},15000);return()=>clearTimeout(timer);},[ready]);
+ useEffect(()=>{if(!ready||!validPoint(coordinate))return;if(lastPoint.current.latitude!==coordinate.latitude||lastPoint.current.longitude!==coordinate.longitude){lastPoint.current=coordinate;webview.current?.injectJavaScript(`window.setDeliveryPin?.(${coordinate.latitude},${coordinate.longitude});true;`);}},[ready,coordinate.latitude,coordinate.longitude]);
+ useEffect(()=>{if(ready)webview.current?.injectJavaScript(`window.setDeliveryMapDisabled?.(${disabled});true;`);},[ready,disabled]);
+ return <View pointerEvents={disabled?'none':'auto'} style={{height,borderRadius:17,overflow:'hidden',borderWidth:1,borderColor:t.border}}>
+ <WebView<unknown> ref={webview} source={{uri}} style={StyleSheet.absoluteFill} originWhitelist={[origin]} javaScriptEnabled geolocationEnabled={false} scrollEnabled={false} nestedScrollEnabled onShouldStartLoadWithRequest={r=>r.url.startsWith(origin+'/delivery-map.html')} onMessage={e=>{try{const value=JSON.parse(e.nativeEvent.data);if(value.type==='ready'){setReady(true);setFailed(false);onReady?.(true);}else if(value.type==='error'){setFailed(true);onReady?.(false);}else if(value.type==='point'&&ready&&!failed&&!disabled&&validPoint(value)){lastPoint.current={latitude:value.latitude,longitude:value.longitude};onChange(lastPoint.current);}}catch{}}} onError={()=>{setFailed(true);onReady?.(false);}}/>
+ {(!ready||failed)&&<View pointerEvents="none" style={[StyleSheet.absoluteFill,{backgroundColor:'#fff8eff5',alignItems:'center',justifyContent:'center',padding:24}]}><Text style={{fontFamily:t.semibold,color:t.ink,textAlign:'center'}}>{failed?'Map unavailable. Check your connection and tap Reload map.':'Finding your place on the map…'}</Text></View>}
  </View>;
 }

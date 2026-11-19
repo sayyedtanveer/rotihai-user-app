@@ -20,3 +20,9 @@ export async function databaseCustomerSession(phoneInput:string,name:string|unde
  if(profile.id!==session.user.id||normalizeProvisionalPhone(profile.phone)!==phone)throw new Error('The customer profile does not match this number.');
  return {...session,user:profile};
 }
+
+// Delivery selection precedes contact entry; restored accounts still need a valid delivery area.
+export function customerEntryScreen<T extends string>(step:T,deliveryReady:boolean,hasArea:boolean):T|'restore'|'location'{
+ if(!deliveryReady||step==='restore')return 'restore';
+ return hasArea?step:'location';
+}

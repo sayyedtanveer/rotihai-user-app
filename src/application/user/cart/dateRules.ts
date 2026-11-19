@@ -4,5 +4,10 @@ export function validCalendarDate(value: string): boolean {
   return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value;
 }
 export function validPauseDates(start: string, resume: string, today: string): boolean {
-  return validCalendarDate(start) && validCalendarDate(resume) && start >= today && resume > start;
+  return validCalendarDate(start) && start >= today && (resume === '' || (validCalendarDate(resume) && resume > start));
+}
+
+export function subscriptionPauseRequest(start:string,resume:string,today:string){
+ if(!validPauseDates(start,resume,today))throw new Error('Choose a valid pause date. The optional resume date must be later.');
+ return {pauseStartDate:start,...(resume?{pauseResumeDate:resume}:{})};
 }

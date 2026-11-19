@@ -1,5 +1,6 @@
+import {enableMobilePush} from '../../../core/notifications/mobilePush';
 import React, { useEffect, useRef } from 'react';
-import { Alert } from 'react-native';
+import { Alert,AppState } from 'react-native';
 import type * as NotificationTypes from 'expo-notifications';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +17,10 @@ export function NotificationNavigation() {
     const Notifications:typeof import('expo-notifications')=require('expo-notifications');
     Notifications.setNotificationHandler({handleNotification:async()=>({shouldShowBanner:true,shouldShowList:true,shouldPlaySound:true,shouldSetBadge:false})});
     let active = true;
+    const register=()=>{void enableMobilePush(token,false).catch(()=>{});};
+    register();
+    const appState=AppState.addEventListener('change',state=>{if(state==='active')register();});
+    const tokenListener=Notifications.addPushTokenListener(register);
     const handle = async (response: NotificationTypes.NotificationResponse | null) => {
       if (!response || !active) return;
       const notification = response.notification.request;
@@ -34,7 +39,7 @@ export function NotificationNavigation() {
     };
     const listener = Notifications.addNotificationResponseReceivedListener(response => { void handle(response); });
     void Notifications.getLastNotificationResponseAsync().then(handle).catch(() => {});
-    return () => { active = false; listener.remove(); };
+    return () => { active = false; listener.remove();appState.remove();tokenListener.remove(); };
   }, [navigation, request, user.id, token]);
   return null;
 }

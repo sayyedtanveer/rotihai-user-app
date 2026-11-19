@@ -13,3 +13,5 @@ export function groupPlans(plans:Plan[]=[],categories:Category[]=[]){
 }
 export function referralEarnings(stats:ReferralStats){const value=stats.totalEarnings??stats.totalEarned;return typeof value==='number'&&Number.isFinite(value)?value:null;}
 export function referralShareMessage(code:string,settings?:ReferralSettings,webBase?:string){const benefit=settings&&Number.isFinite(settings.referredBonus)&&settings.referredBonus>0?' Eligible first orders can receive ₹'+settings.referredBonus+' under the current referral rules.':'';return 'Try RotiHai! Use my referral code '+code+'.'+benefit+(webBase?.startsWith('https://')?' '+webBase:'');}
+
+export function orderedCategories(categories:Category[]=[]){return categories.slice().sort((a,b)=>(a.displayOrder??Number.MAX_SAFE_INTEGER)-(b.displayOrder??Number.MAX_SAFE_INTEGER));}

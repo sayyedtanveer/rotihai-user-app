@@ -1,0 +1,4 @@
+PASS 375px: actual checkout reached protected order submission with Deliver now, no slot selected.
+PASS 375px: required field errors, map review, GPS option and selecting unchanged correct pin; no live APIs.
+PASS 390px: actual checkout reached protected order submission with Deliver now, no slot selected.
+PASS 390px: required field errors, map review, GPS option and selecting unchanged correct pin; no live APIs.

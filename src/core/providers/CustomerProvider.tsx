@@ -1,3 +1,6 @@
+import {assertAddressSaved} from '../location/addressRules';
+import {validatedApiOrigin} from '../api/apiBase';
+import {useDeliveryArea} from '../location/DeliveryAreaProvider';
 import {checkoutAddress} from '../storage/checkoutState';
 import {provisionalContact} from '../storage/provisionalContact';
 import {readAddress} from '../../application/user/cart/cartRules';
@@ -11,7 +14,7 @@ import { ApiError, customerApi } from '../api/customerApi';
 import type { User, Notice, Address } from '../api/models';
 import { ErrorView, Loading, Page, Button } from '../../presentation/user/components/UI';
 
-type Context = { deliveryAddress:Address|null; saveDeliveryAddress:(address:Address)=>Promise<void>; login: (destination?: any) => void; user: User; token: string; request: <T>(path: string, body?: unknown, method?: string, headers?: Record<string,string>) => Promise<T>; logout: () => void; notices: Notice[]; markRead: () => void };
+type Context = { deliveryAddress:Address|null; saveDeliveryAddress:(address:Address)=>Promise<void>; login: (destination?: any) => void; user: User; token: string; request: <T>(path: string, body?: unknown, method?: string, headers?: Record<string,string>) => Promise<T>; logout: () => void; notices: Notice[]; markRead: (id?:string) => void; clearNotices: () => void };
 const CustomerContext = createContext<Context | null>(null);
 export function CustomerProvider({ token, onLogout, onLogin, children }: React.PropsWithChildren<{ token: string; onLogin: (destination?: any, contactPhone?:string) => void; onLogout: () => void }>) {
   const client = useQueryClient();
@@ -26,6 +29,7 @@ export function CustomerProvider({ token, onLogout, onLogin, children }: React.P
   const [notices, setNotices] = useState<Notice[]>([]);
   const userId = profile.data?.id || (token&&localProfile?.token===token?localProfile.user.id:undefined);
   useEffect(() => {
+    setNotices([]);
     if (!userId) return;
     let active = true;
     void AsyncStorage.getItem('notices:' + userId).then(value => {
@@ -36,15 +40,15 @@ export function CustomerProvider({ token, onLogout, onLogin, children }: React.P
   }, [userId]);
   useEffect(() => {
     if (!userId || (__DEV__&&process.env.EXPO_PUBLIC_UI_REVIEW==='1')) return;
-    const base = process.env.EXPO_PUBLIC_API_BASE_URL;
-    if (!base?.startsWith('https://') || base.includes('example.com')) return;
+    let base: string;
+    try { base=validatedApiOrigin(process.env.EXPO_PUBLIC_API_BASE_URL,typeof __DEV__ !== 'undefined' && __DEV__); } catch { return; }
     let socket: WebSocket | undefined;
     let timer: ReturnType<typeof setTimeout> | undefined;
     let stopped = false;
     let delay = 1000;
     const connect = () => {
       if (stopped || AppState.currentState !== 'active') return;
-      socket = new WebSocket(base.replace(/^https:/, 'wss:').replace(/\/$/, '') + '/ws?type=browser&userId=' + encodeURIComponent(userId));
+      socket = new WebSocket(base.replace(/^http/, 'ws').replace(/\/$/, '') + '/ws?type=browser&userId=' + encodeURIComponent(userId));
       socket.onopen = () => { delay = 1000; void client.invalidateQueries({ queryKey: ['customer'] }); };
       socket.onmessage = e => {
         try {
@@ -75,11 +79,12 @@ export function CustomerProvider({ token, onLogout, onLogin, children }: React.P
     });
     return () => { stopped = true; if (timer) clearTimeout(timer); socket?.close(); appState.remove(); };
   }, [userId, client]);
-  const markRead = useCallback(() => setNotices(previous => {
-    const next = previous.map(n => ({ ...n, read: true }));
+  const markRead = useCallback((id?:string) => setNotices(previous => {
+    const next = previous.map(n => !id||n.id===id?{ ...n, read: true }:n);
     if (userId) void AsyncStorage.setItem('notices:' + userId, JSON.stringify(next)).catch(() => {});
     return next;
   }), [userId]);
+  const clearNotices=useCallback(()=>{setNotices([]);if(userId)void AsyncStorage.removeItem('notices:'+userId).catch(()=>{});},[userId]);
   const profileCached=useSyncExternalStore(subscribeCacheDelivery,()=>isCachedDelivery('/api/user/profile',userId));
   const resolvedProfile=profile.data||(localProfile?.token===token?localProfile.user:null);
   const [contact,setContact]=useState(''),[contactName,setContactName]=useState('');
@@ -88,9 +93,11 @@ export function CustomerProvider({ token, onLogout, onLogin, children }: React.P
   useEffect(()=>{let alive=true;if(!token){if(__DEV__&&process.env.EXPO_PUBLIC_UI_REVIEW==='1')setContact('9000000000');else void Promise.all([provisionalContact.read(),provisionalContact.readName()]).then(([value,name])=>{if(alive){setContact(value||'');setContactName(name);}});}return()=>{alive=false;};},[token]);
   useEffect(()=>{let alive=true;if(owner)void checkoutAddress.read(owner).then(address=>{if(alive)setLocalAddress({owner,address});});return()=>{alive=false;};},[owner]);
   const guest: User = {id:'guest', name:contactName||'Guest', phone:contact};
-  const deliveryAddress=owner&&localAddress?.owner===owner&&localAddress.address?localAddress.address:readAddress(resolvedProfile||guest);
-  const saveDeliveryAddress=async(address:Address)=>{if(!owner)throw new Error('Your delivery details are still loading.');if(token)await request('/api/user/profile',{latitude:address.latitude,longitude:address.longitude,defaultDeliveryAddress:address},'PUT');await checkoutAddress.save(owner,address);setLocalAddress({owner,address});if(token)await client.invalidateQueries({queryKey:['customer']});};
-  const value = {deliveryAddress,saveDeliveryAddress,user: token ? resolvedProfile! : guest, token, request, logout:onLogout, notices, markRead, login:(destination?:any)=>onLogin(destination,(token?resolvedProfile?.phone:contact)||undefined)};
+  const selectedDelivery=useDeliveryArea();
+  const candidateAddress=owner&&localAddress?.owner===owner&&localAddress.address?localAddress.address:readAddress(resolvedProfile||guest);
+  const deliveryAddress=candidateAddress&&selectedDelivery.area?.pincode===candidateAddress.pincode?candidateAddress:null;
+  const saveDeliveryAddress=async(address:Address)=>{if(!owner)throw new Error('Your delivery details are still loading.');if(token){const saved=await request<User>('/api/user/profile',{latitude:address.latitude,longitude:address.longitude,defaultDeliveryAddress:address},'PUT');assertAddressSaved(saved,address,owner);client.setQueryData(['customer',token,'/api/user/profile'],saved);}await checkoutAddress.save(owner,address);setLocalAddress({owner,address});if(token)await client.invalidateQueries({queryKey:['customer']});};
+  const value = {deliveryAddress,saveDeliveryAddress,user: token ? resolvedProfile! : guest, token, request, logout:onLogout, notices, markRead, clearNotices, login:(destination?:any)=>onLogin(destination,(token?resolvedProfile?.phone:contact)||undefined)};
   if(owner&&localAddress?.owner!==owner)return <Loading/>;
   if (token && profile.isPending && !resolvedProfile) return <Loading/>;
   if (token && !resolvedProfile) return <Page><ErrorView error={profile.error} retry={()=>void profile.refetch()}/><Button title="Continue browsing" onPress={onLogout}/></Page>;

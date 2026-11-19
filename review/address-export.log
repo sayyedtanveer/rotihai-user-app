@@ -1,0 +1,52 @@
+env: load .env
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_WEB_BASE_URL
+Starting Metro Bundler
+
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:201784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 23037ms index.ts (1211 modules)
+iOS Bundled 33088ms index.ts (1219 modules)
+
+› Assets (32):
+assets\brand\hero.png (2.2MB)
+assets\brand\meals.jpg (60KB)
+assets\brand\RotiHai Warm Golden Splash Screen.png (1.7MB)
+node_modules\@expo-google-fonts\inter\400Regular\Inter_400Regular.ttf (342KB)
+node_modules\@expo-google-fonts\inter\500Medium\Inter_500Medium.ttf (343KB)
+node_modules\@expo-google-fonts\inter\600SemiBold\Inter_600SemiBold.ttf (344KB)
+node_modules\@expo-google-fonts\inter\700Bold\Inter_700Bold.ttf (344KB)
+node_modules\@expo-google-fonts\inter\800ExtraBold\Inter_800ExtraBold.ttf (345KB)
+node_modules\@react-navigation\elements\lib\module\assets\back-icon-mask.png (653B)
+node_modules\@react-navigation\elements\lib\module\assets\back-icon.png (8 variations | 359B)
+node_modules\@react-navigation\elements\lib\module\assets\clear-icon.png (4 variations | 425B)
+node_modules\@react-navigation\elements\lib\module\assets\close-icon.png (4 variations | 235B)
+node_modules\@react-navigation\elements\lib\module\assets\search-icon.png (7 variations | 592B)
+
+› android bundles (1):
+_expo/static/js/android/index-473ebb2b517ad1be28330ffb0347dc90.hbc (3MB)
+
+› ios bundles (1):
+_expo/static/js/ios/index-f94cbbfe6d72c14610abf0f09a85f77c.hbc (3MB)
+
+› Files (1):
+metadata.json (3.4KB)
+
+Exported: review/address-export

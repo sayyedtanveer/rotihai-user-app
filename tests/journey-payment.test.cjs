@@ -131,6 +131,7 @@ test('MVP database session rejects missing token, mismatched customer and unavai
 
 test('explicit logout removes saved contact and guest receipt so prior orders cannot reappear',async()=>{
  const {customerSession}=load('src/core/storage/customerSession.ts'),{provisionalContact}=load('src/core/storage/provisionalContact.ts');
+ const {deliveryAreaSelection}=load('src/core/storage/deliveryAreaSelection.ts');await deliveryAreaSelection.save({pincode:'400070',area:'Kurla West',latitude:19.07,longitude:72.88,source:'pincode'});
  await customerSession.save('logout-test-token');await provisionalContact.save('9876543210','Test customer');
  await pendingPayment.save('guest',{...payment,guestReceipt:{phone:'9876543210'}});
  await checkoutState.checkoutAddress.save('guest',delivery);
@@ -139,5 +140,49 @@ test('explicit logout removes saved contact and guest receipt so prior orders ca
  await customerSession.clear();
  assert.equal(await customerSession.read(),null);assert.equal(await provisionalContact.read(),null);
  assert.equal(await pendingPayment.read('guest'),null);assert.equal(await checkoutState.checkoutAddress.read('guest'),null);
- assert.equal(await cache.cachedProfile('logout-test-token'),null);
+ assert.equal(await cache.cachedProfile('logout-test-token'),null);assert.equal(await deliveryAreaSelection.read(),null);
+});
+
+const enrollment=load('src/application/user/subscriptions/subscriptionRules.ts');
+test('subscription server rejection releases the attempt and permits a corrected submission',async()=>{
+ const {subscriptionCreationAttempt:attempt}=load('src/core/storage/pendingPayment.ts');
+ for(const status of [400,401,403,404,409,422,429]){
+  await attempt.save('enrollment-owner',{kind:'plan',planId:'p',createdAt:new Date().toISOString()});
+  const rejection=Object.assign(new Error('Rejected'),{status});
+  await assert.rejects(enrollment.submitSubscriptionRequest(async()=>{throw rejection;},()=>attempt.clear('enrollment-owner')),e=>e===rejection);
+  assert.equal(await attempt.read('enrollment-owner'),null);
+ }
+});
+test('subscription uncertain responses retain recovery and cannot silently allow a second purchase',async()=>{
+ const {subscriptionCreationAttempt:attempt}=load('src/core/storage/pendingPayment.ts');
+ for(const status of [undefined,200,201,408,500,502,503]){
+  await attempt.save('uncertain-owner',{kind:'plan',planId:'p',createdAt:new Date().toISOString()});
+  await assert.rejects(enrollment.submitSubscriptionRequest(async()=>{throw Object.assign(new Error('Uncertain'),{status});},()=>attempt.clear('uncertain-owner')));
+  assert.equal((await attempt.read('uncertain-owner')).planId,'p');
+ }
+});
+test('flat created subscription uses authoritative total and retains recovery until pending payment is saved',async()=>{
+ const {subscriptionCreationAttempt:attempt}=load('src/core/storage/pendingPayment.ts');
+ const record={id:'sub-created',planId:'p',finalAmount:'840',price:999,status:'pending',isPaid:false};
+ await attempt.save('success-owner',{kind:'plan',planId:'p',createdAt:new Date().toISOString()});
+ const created=await enrollment.submitSubscriptionRequest(async()=>record,()=>attempt.clear('success-owner'));
+ assert.equal(created.id,'sub-created');assert.equal(enrollment.subscriptionPayable(created),840);
+ assert.ok(await attempt.read('success-owner'));
+ await pendingPayment.save('success-owner',{id:created.id,kind:'subscription',amount:enrollment.subscriptionPayable(created),phase:'ready',createdAt:new Date().toISOString()});
+ await attempt.clear('success-owner');
+ assert.equal((await pendingPayment.read('success-owner')).amount,840);assert.equal(await attempt.read('success-owner'),null);
+});
+test('missing or invalid created subscription totals never fall back to an advertised plan price',()=>{
+ for(const amount of [undefined,null,'',0,-1,'not-a-price',Infinity])assert.throws(()=>enrollment.subscriptionPayable({id:'sub',finalAmount:amount}));
+ assert.equal(enrollment.subscriptionPayable({finalAmount:undefined,totalAmount:'100'}),100);
+});
+
+test('new customer and explicit logout require pincode before contact; valid returning session preserves Home',()=>{
+ assert.equal(entry.customerEntryScreen('restore',false,false),'restore');
+ assert.equal(entry.customerEntryScreen('phone',true,false),'location');
+ assert.equal(entry.customerEntryScreen('phone',true,true),'phone');
+ assert.equal(entry.customerEntryScreen('home',true,true),'home');
+ assert.equal(entry.customerEntryScreen('home',true,false),'location');
+ assert.equal(entry.customerEntryScreen('otp',true,true),'otp');
+ assert.equal(entry.customerEntryScreen('name',true,true),'name');
 });

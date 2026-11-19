@@ -98,3 +98,128 @@ test('missing offer route removes stale promotion eligibility rather than bypass
  assert.equal(fresh,null);assert.throws(()=>validateFreshItem(item,p,fresh),/new price or offer/);
  await assert.rejects(()=>currentProductOffer(async()=>{throw Object.assign(Error('Service unavailable'),{status:503});},p,offer),/Service unavailable/);
 });
+
+test('featured category follows admin displayOrder rather than category name or response order',()=>{
+ const categories=[{id:'snacks',name:'Home Meals',displayOrder:4},{id:'daily',name:'Renamed category',displayOrder:1},{id:'other',name:'Other'}];
+ assert.deepEqual(content.orderedCategories(categories).map(c=>c.id),['daily','snacks','other']);assert.equal(categories[0].id,'snacks');
+});
+
+test('delivery address refuses missing pricing settings and outside-zone zero fees',()=>{
+ const {validatedDeliveryFee}=load('src/core/location/discoveryRules.ts');
+ for(const deliveryRangeName of ['Outside delivery zone','No delivery settings configured','No active delivery settings'])assert.throws(()=>validatedDeliveryFee({deliveryFee:0,deliveryRangeName}));
+ for(const deliveryFee of [undefined,null,'',-1,'invalid',Infinity])assert.throws(()=>validatedDeliveryFee({deliveryFee}));
+ assert.equal(validatedDeliveryFee({deliveryFee:'35',freeDeliveryEligible:false}),35);
+ assert.equal(validatedDeliveryFee({deliveryFee:35,freeDeliveryEligible:true}),0);
+});
+
+test('pincode choices use only active admin areas with an exact configured pincode',()=>{
+ const {areasForPincode}=load('src/core/location/discoveryRules.ts');
+ const rows=[{id:'west',name:'Kurla West',pincodes:['400070'],isActive:true},{id:'east',name:'Kurla East',pincodes:['400024'],isActive:true},{id:'off',name:'Disabled',pincodes:['400070'],isActive:false}];
+ assert.deepEqual(areasForPincode(rows,'400070').map(a=>a.id),['west']);
+ assert.deepEqual(areasForPincode(rows,'999999'),[]);assert.deepEqual(areasForPincode(rows,'40007'),[]);
+});
+
+test('existing profile text prefills without coordinates but cannot become a checkout location',()=>{
+ const user={address:JSON.stringify({building:'Flat 12',street:'Station Road',area:'Kurla West',pincode:400070})};
+ assert.equal(rules.savedAddressFields(user).street,'Station Road');assert.equal(rules.savedAddressFields(user).pincode,'400070');assert.equal(rules.readAddress(user),null);
+ assert.equal(rules.savedAddressFields({address:JSON.stringify({addressBuilding:'House 4',addressStreet:'Road 2',addressPincode:'400070'})}).street,'Road 2');
+ assert.equal(rules.savedAddressFields({address:'Legacy address'}).building,'Legacy address');
+});
+
+test('address recovery uses latest structured order for exact owner and selected pincode',()=>{
+ const base={userId:'mine',addressPincode:'400070',addressBuilding:'Flat 1',addressStreet:'Road A',createdAt:'2026-01-01'};
+ const found=rules.latestOrderAddress([base,{...base,addressBuilding:'New flat',createdAt:'2026-02-01'},{...base,userId:'other',createdAt:'2026-03-01'},{...base,addressPincode:'400024',createdAt:'2026-04-01'}],'mine','400070');
+ assert.equal(found.building,'New flat');assert.equal(found.street,'Road A');
+ assert.equal(rules.latestOrderAddress([{...base,userId:null}],'mine','400070'),null);
+ assert.equal(rules.latestOrderAddress([{...base,addressStreet:''}],'mine','400070'),null);
+});
+
+test('billing distance follows admin estimate and rejects missing distances',()=>{
+ assert.equal(rules.billingDistance(2,{roadDistanceMultiplier:'1.8'}),3.6);
+ assert.equal(rules.billingDistance(2,{enableRoadDistanceMultiplier:false}),2);
+ assert.equal(rules.billingDistance(2,{}),3);assert.equal(rules.billingDistance(null,{}),null);assert.equal(rules.billingDistance(-1,{}),null);
+});
+test('convenience fee tiers follow admin settings at boundaries',()=>{
+ const c={platformFeeEnabled:true,platformFeeBelow100:12,platformFeeBelow200:7,platformFeeAbove200:4,platformFeeWaiverThreshold:300};
+ assert.equal(rules.platformFee(99,c),12);assert.equal(rules.platformFee(100,c),7);assert.equal(rules.platformFee(200,c),4);assert.equal(rules.platformFee(300,c),0);assert.equal(rules.platformFee(50,{...c,platformFeeEnabled:false}),0);
+});
+
+const quoteRules=load('src/application/user/cart/billingQuote.ts');
+const fixtureQuote={quoteId:'fixture',expiresAt:'2099-01-01T00:00:00Z',bill:{subtotalPaise:20000,deliveryFeePaise:2000,platformFeePaise:400,discountPaise:1000,walletCreditPaise:5000,bonusCreditPaise:0,payablePaise:16400},distance:{method:'haversine_multiplier',billingDistanceKm:1.8},delivery:{}};
+test('mobile renders an authoritative bill without repricing it',()=>{assert.equal(quoteRules.validateBillingQuote(fixtureQuote).bill.payablePaise,16400);});
+test('mobile blocks malformed and non-reconciling backend bills',()=>{assert.throws(()=>quoteRules.validateBillingQuote({...fixtureQuote,bill:{...fixtureQuote.bill,payablePaise:1}}));assert.throws(()=>quoteRules.validateBillingQuote({...fixtureQuote,bill:{...fixtureQuote.bill,deliveryFeePaise:-1}}));});
+test('mobile requires review for repriced bills and changed pricing distance',()=>{assert.doesNotThrow(()=>quoteRules.assertReviewedBill(fixtureQuote,{...fixtureQuote,quoteId:'new'}));assert.throws(()=>quoteRules.assertReviewedBill(fixtureQuote,{...fixtureQuote,bill:{...fixtureQuote.bill,payablePaise:17000}}));assert.throws(()=>quoteRules.assertReviewedBill(fixtureQuote,{...fixtureQuote,distance:{...fixtureQuote.distance,billingDistanceKm:2}}));});
+
+test('mobile accepts unchanged bill and distance after JSON object keys are reordered',()=>{
+ const reordered={...fixtureQuote,bill:Object.fromEntries(Object.entries(fixtureQuote.bill).reverse()),distance:Object.fromEntries(Object.entries(fixtureQuote.distance).reverse())};
+ assert.doesNotThrow(()=>quoteRules.assertReviewedBill(fixtureQuote,reordered));
+});
+
+test('existing offer field stores direct rupees per product or bundle',()=>{
+ assert.equal(rules.discountedUnitPrice(11,1),10);
+ assert.equal(rules.lineTotal({...item,price:11,quantity:10,offerPercentage:1}),100);
+ assert.equal(rules.lineTotal({...item,price:110,quantity:2,offerPercentage:5}),210);
+ assert.equal(rules.discountedUnitPrice(11,0),11);
+ assert.equal(rules.discountedUnitPrice(11,100),0);
+});
+const apiBase=load('src/core/api/apiBase.ts');
+test('local test API accepts an api suffix without doubling the request prefix',()=>{
+ assert.equal(apiBase.validatedApiOrigin('http://localhost:5173/api',true)+'/api/orders','http://localhost:5173/api/orders');
+ assert.equal(apiBase.apiOrigin('https://rotihai.example/api/'),'https://rotihai.example');
+ assert.throws(()=>apiBase.validatedApiOrigin('http://localhost:5173/api',false));
+ assert.throws(()=>apiBase.validatedApiOrigin('http://remote.example.net/api',true));
+});
+
+test('new admin rupee discount invalidates a stale mobile basket price',()=>{
+ const discounted={...item,price:11,quantity:1,offerPercentage:1};
+ const freshProduct={...product,price:11,offerPercentage:2};
+ assert.throws(()=>validateFreshItem(discounted,freshProduct,null),/new price or offer/);
+});
+
+test('Expo Wi-Fi development permits private LAN APIs and production still requires HTTPS',()=>{
+ for(const address of ['192.168.0.150','10.0.0.5','172.16.1.2','172.31.1.2']){
+  assert.equal(apiBase.validatedApiOrigin('http://'+address+':5173/api',true),'http://'+address+':5173');
+  assert.throws(()=>apiBase.validatedApiOrigin('http://'+address+':5173/api',false));
+ }
+ for(const address of ['8.8.8.8','172.32.1.2','192.168.1.999','192.168.0.150.example.net'])assert.throws(()=>apiBase.validatedApiOrigin('http://'+address+':5173/api',true));
+});
+
+const scheduleRules=load('src/application/user/cart/checkoutRules.ts');
+test('regular Deliver now omits all slot and date fields even when a future date was restored',()=>{
+ assert.deepEqual(scheduleRules.selectedDeliverySchedule(false,'','2026-11-19',[],'preorder-lunch'),{});
+});
+test('an optional selected slot uses its actual admin times and can be cleared back to regular delivery',()=>{
+ const slots=[{id:'fixture',startTime:'18:30',endTime:'19:30',capacity:4,currentOrders:1,isActive:true}];
+ assert.deepEqual(scheduleRules.selectedDeliverySchedule(false,'fixture','2026-11-19',slots,''),{deliverySlotId:'fixture',deliveryDate:'2026-11-19',deliveryTime:'18:30'});
+ assert.deepEqual(scheduleRules.selectedDeliverySchedule(false,'','2026-11-19',slots,''),{});
+ assert.throws(()=>scheduleRules.selectedDeliverySchedule(false,'fixture','2026-11-19',[{...slots[0],currentOrders:4}],''),/unavailable/);
+ assert.throws(()=>scheduleRules.selectedDeliverySchedule(false,'fixture','2026-11-19',[{...slots[0],isActive:false}],''),/unavailable/);
+});
+test('preorders retain a required meal and date with the refreshed configured delivery time',()=>{
+ assert.throws(()=>scheduleRules.selectedDeliverySchedule(true,'','2026-11-19',[],'','18:00'),/meal time/);
+ assert.throws(()=>scheduleRules.selectedDeliverySchedule(true,'','',[],'preorder-dinner','18:00'),/date/);
+ assert.deepEqual(scheduleRules.selectedDeliverySchedule(true,'','2026-11-19',[],'preorder-dinner','18:45'),{deliverySlotId:'preorder-dinner',deliveryDate:'2026-11-19',deliveryTime:'18:45'});
+});
+test('schedule display formats admin times and capacity without invented availability',()=>{
+ assert.equal(scheduleRules.formatScheduleTime('00:15'),'12:15 AM');assert.equal(scheduleRules.formatScheduleTime('12:30'),'12:30 PM');assert.equal(scheduleRules.formatScheduleTime('18:45'),'6:45 PM');
+ assert.equal(scheduleRules.slotHasCapacity({capacity:0,currentOrders:0}),false);assert.equal(scheduleRules.slotHasCapacity({}),true);
+});
+
+test('schedule keeps meaningful admin labels without repeating a time-only label',()=>{
+ assert.equal(scheduleRules.scheduleSlotLabel({label:'9:00 AM - 11:00 AM'}),'');assert.equal(scheduleRules.scheduleSlotLabel({label:'Breakfast delivery'}),'Breakfast delivery');
+});
+
+test('checkout referral uses the existing validation contract without calculating a discount',async()=>{
+ const {verifyCheckoutReferral}=load('src/application/user/cart/couponRules.ts');let captured;
+ const result=await verifyCheckoutReferral(async(path,body)=>{captured={path,body};return {valid:true,message:'Pending eligibility'};},' abc ',120);
+ assert.deepEqual(captured,{path:'/api/referral/validate',body:{referralCode:'ABC',orderAmount:120}});assert.equal(result.code,'ABC');assert.equal(result.discountAmount,undefined);
+ await assert.rejects(()=>verifyCheckoutReferral(async()=>({valid:false,message:'Expired code'}),'ABC',120),/Expired code/);
+ await assert.rejects(()=>verifyCheckoutReferral(async()=>({}),'ABC',120),/unavailable/);
+});
+
+test('subscription pause supports an omitted resume date without inventing a future date',()=>{
+ const {subscriptionPauseRequest}=load('src/application/user/cart/dateRules.ts');
+ assert.deepEqual(subscriptionPauseRequest('2026-11-20','','2026-11-19'),{pauseStartDate:'2026-11-20'});
+ assert.deepEqual(subscriptionPauseRequest('2026-11-20','2026-11-22','2026-11-19'),{pauseStartDate:'2026-11-20',pauseResumeDate:'2026-11-22'});
+ for(const [start,resume] of [['2026-11-18',''],['2026-02-30',''],['2026-11-20','2026-11-20'],['2026-11-20','invalid']])assert.throws(()=>subscriptionPauseRequest(start,resume,'2026-11-19'),/valid pause date/);
+});

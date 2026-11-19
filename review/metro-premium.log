@@ -1,0 +1,16 @@
+env: load .env
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_WEB_BASE_URL
+Starting project at C:\Users\sayye\source\repos\rotihai-user
+Starting Metro Bundler
+
+Waiting on http://localhost:8092
+
+Logs for your project will appear below.
+| (node:124292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:124292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 1799ms index.ts (1408 modules)
+ WARN  ImageBackground is deprecated and will be removed in a future release. Use a View with an absolutely positioned Image instead. See https://reactnative.dev/docs/imagebackground
+ ERROR  [Error: Couldn't find a 'component', 'getComponent' or 'children' prop for the screen 'Checkout'. This can happen if you passed 'undefined'. You likely forgot to export your component from the file it's defined in, or mixed up default import and named import when importing.]
+Android Bundled 20392ms index.ts (1 module)
